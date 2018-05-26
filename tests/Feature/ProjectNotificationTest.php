@@ -24,7 +24,11 @@ class ProjectNotificationTest extends TestCase
         $user = factory(User::class)->create();
         $project = factory(Project::class)->create(['user_id' => $user->id, 'total_seconds' => 600]);
         // Which is at 50% time
-        $timelog = factory(TimeLog::class)->create(['number_of_seconds' => 300, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class)->create([
+            'number_of_seconds' => 300, 
+            'user_id' => $user->id, 
+            'project_id' => $project->id
+        ]);
         // The project owner should receive a notification
         Notification::assertSentTo($user, ProjectIsAtFiftyPercentTime::class);
     }
@@ -36,7 +40,11 @@ class ProjectNotificationTest extends TestCase
         $user = factory(User::class)->create();
         $project = factory(Project::class)->create(['user_id' => $user->id, 'total_seconds' => 600]);
         // Which is at 50% time
-        $timelog = factory(TimeLog::class)->create(['number_of_seconds' => 480, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class)->create([
+            'number_of_seconds' => 480, 
+            'user_id' => $user->id, 
+            'project_id' => $project->id
+        ]);
         // The project owner should receive a notification
         Notification::assertSentTo($user, ProjectIsAtEightyPercentTime::class);
     }
@@ -48,7 +56,11 @@ class ProjectNotificationTest extends TestCase
         $user = factory(User::class)->create();
         $project = factory(Project::class)->create(['user_id' => $user->id, 'total_seconds' => 600]);
         // Which is at 50% time
-        $timelog = factory(TimeLog::class)->create(['number_of_seconds' => 600, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class)->create([
+            'number_of_seconds' => 600, 
+            'user_id' => $user->id, 
+            'project_id' => $project->id
+        ]);
         // The project owner should receive a notification
         Notification::assertSentTo($user, ProjectIsAtOneHundredPercentTime::class);
     }

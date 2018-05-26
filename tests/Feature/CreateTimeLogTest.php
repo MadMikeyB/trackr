@@ -22,7 +22,11 @@ class CreateTimeLogTest extends TestCase
         // who has a project
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // who wants to log time against their project
-        $timelog = factory(TimeLog::class)->make(['number_of_seconds' => 60, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class)->make([
+            'number_of_seconds' => 60, 
+            'user_id' => $user->id, 
+            'project_id' => $project->id
+        ]);
         // when the time is logged
         $response = $this->json('POST', route('api.timelog.store', $project->fresh()), $timelog->toArray());
         // it should be persisted in the database
@@ -43,7 +47,11 @@ class CreateTimeLogTest extends TestCase
         // who doesn't have a project
         $project = factory(Project::class)->create(['user_id' => '9000']); // Over 9000!
         // who tries to log time against not their project
-        $timelog = factory(TimeLog::class)->make(['number_of_seconds' => 60, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class)->make([
+            'number_of_seconds' => 60, 
+            'user_id' => $user->id, 
+            'project_id' => $project->id
+        ]);
         // when the time is logged
         $response = $this->json('POST', route('api.timelog.store', $project->fresh()), $timelog->toArray());
         // They should be redirected to the home page
@@ -57,7 +65,11 @@ class CreateTimeLogTest extends TestCase
         // Given we have a project
         $project = factory(Project::class)->create(['user_id' => '9000']); // Over 9000!
         // And an unauthenticated user wishes to log time
-        $timelog = factory(TimeLog::class)->make(['number_of_seconds' => 60, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class)->make([
+            'number_of_seconds' => 60, 
+            'user_id' => $user->id, 
+            'project_id' => $project->id
+        ]);
         // when the time is logged
         $response = $this->post(route('api.timelog.store', $project->fresh()), $timelog->toArray());
         // They should be redirected to login
