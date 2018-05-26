@@ -23,3 +23,6 @@ Route::resource('projects', 'ProjectsController');
 
 // API route model binding not working
 Route::post('/api/logtime/{project}', 'Api\\TimelogController@store')->name('api.timelog.store');
+
+Route::get('/settings', 'UserSettingsController@index')->name('user.settings.index');
+Route::post('/settings', 'UserSettingsController@store')->name('user.settings.store');
