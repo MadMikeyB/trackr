@@ -12,14 +12,27 @@ class UserSettingsController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * Display the settings page
+     * 
+     * @return Illuminate\Http\Response
+     */
     public function index()
     {
         // @todo view
         return 'Settings';
     }
 
+    /**
+     * Store users settings
+     * 
+     * @param Request $request
+     * @return Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
+        // @todo validation
+        
         UserSetting::create($request->all());
 
         return redirect()->route('user.settings.index');

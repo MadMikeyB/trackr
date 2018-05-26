@@ -90,4 +90,13 @@ class ProjectTest extends TestCase
         // assert the relationship
         $this->assertInstanceOf('App\User', $project->fresh()->user);
     }
+
+    public function test_it_can_have_milestones()
+    {
+        // Given we have a project
+        $user = factory(User::class)->create();
+        $project = factory(Project::class)->create(['user_id' => $user->id]);
+        // assert the relationship
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $project->milestones);
+    }
 }

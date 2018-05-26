@@ -26,3 +26,8 @@ Route::post('/api/logtime/{project}', 'Api\\TimelogController@store')->name('api
 
 Route::get('/settings', 'UserSettingsController@index')->name('user.settings.index');
 Route::post('/settings', 'UserSettingsController@store')->name('user.settings.store');
+
+Route::post('/milestones/{project}', 'ProjectMilestoneController@store')->name('milestones.store');
+Route::get('/milestones/{project}/create', 'ProjectMilestoneController@create')->name('milestones.create');
+Route::get('/milestones/{project}/edit', 'ProjectMilestoneController@edit')->name('milestones.edit');
+Route::patch('/milestones/{project}/{milestone}', 'ProjectMilestoneController@update')->name('milestones.update');

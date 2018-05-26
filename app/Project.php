@@ -38,6 +38,16 @@ class Project extends Model
     }
 
     /**
+     * A project can have many milestones
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function milestones()
+    {
+        return $this->hasMany(ProjectMilestone::class);
+    }
+
+    /**
      * A project belongs to a user
      * 
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
