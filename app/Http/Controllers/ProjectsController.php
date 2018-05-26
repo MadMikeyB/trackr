@@ -45,6 +45,16 @@ class ProjectsController extends Controller
     }
 
     /**
+     * Display the create project form
+     * 
+     * @return ???
+     */
+    public function create()
+    {
+        // @todo view
+    }
+
+    /**
      * Store a new project in the database
      * 
      * @param Request $request
@@ -72,6 +82,13 @@ class ProjectsController extends Controller
         // @todo view
     }
 
+    /**
+     * Update a project
+     * 
+     * @param Illuminate\Http\Request $request
+     * @param App\Project $project
+     * @return Illuminate\Http\RedirectResponse
+     */
     public function update(Request $request, Project $project)
     {
         if (!auth()->user()->can('update', $project)) {

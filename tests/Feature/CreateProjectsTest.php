@@ -12,6 +12,27 @@ class CreateProjectsTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_an_authenticated_user_can_see_the_create_project_screen()
+    {
+        // Given we have a user
+        $user = factory(User::class)->create();
+        // Who is logged in
+        $this->signIn($user);
+        // When they visit the project creation form
+        $response = $this->get(route('projects.create'));
+        // They should see it
+        $response->assertStatus(200);
+    }
+
+    public function test_an_unauthenticated_user_cannot_see_the_create_project_screen()
+    {
+        // When they visit the project creation form
+        $response = $this->get(route('projects.create'));
+        // They should see it
+        $response->assertStatus(302)->assertRedirect(route('login'));
+    }
+
+
     public function test_an_authenticated_user_can_create_a_project()
     {
         // Given we have a user
