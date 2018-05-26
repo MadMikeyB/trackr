@@ -38,6 +38,16 @@ class Project extends Model
     }
 
     /**
+     * A project belongs to a user
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
      * A project exposes how much time has been logged
      */
     public function getTimeLoggedAttribute()

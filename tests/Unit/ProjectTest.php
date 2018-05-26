@@ -81,4 +81,13 @@ class ProjectTest extends TestCase
         $percentage = (100 - $project->percentage_taken);
         $this->assertSame($project->percentage_remaining, $percentage);
     }
+
+    public function test_it_can_expose_its_user()
+    {
+        // Given we have a project
+        $user = factory(User::class)->create();
+        $project = factory(Project::class)->create(['user_id' => $user->id]);
+        // assert the relationship
+        $this->assertInstanceOf('App\User', $project->fresh()->user);
+    }
 }
