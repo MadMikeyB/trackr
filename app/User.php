@@ -47,7 +47,6 @@ class User extends Authenticatable
         return $this->hasMany(TimeLog::class);
     }
 
-
     /**
      * A user has many milestones
      * 
@@ -57,7 +56,6 @@ class User extends Authenticatable
     {
         return $this->hasMany(ProjectMilestone::class);
     }
-
 
     /**
      * Get the total time logged for this user

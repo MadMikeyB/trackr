@@ -15,6 +15,25 @@ class ProjectMilestone extends Model
     /* @var $dates The fields which are mutated to carbon instances */
     public $dates = ['completed_at'];
 
-    // belongsTo Project
+    /**
+     * A milestone belongs to a project
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    /**
+     * A milestone belongs to a user
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     // belongsTo User
 }
