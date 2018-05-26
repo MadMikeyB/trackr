@@ -101,4 +101,21 @@ class ProjectsController extends Controller
 
         return redirect()->to($project->url());
     }
+
+    /**
+     * Delete a project
+     * 
+     * @param App\Project $project
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Project $project)
+    {
+        if (!auth()->user()->can('delete', $project)) {
+            return redirect()->route('home');
+        }
+
+        $project->delete();
+
+        return redirect()->route('projects.index');
+    }
 }

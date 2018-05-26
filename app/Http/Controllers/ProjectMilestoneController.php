@@ -43,6 +43,13 @@ class ProjectMilestoneController extends Controller
         return redirect()->route('projects.show', $project);
     }
 
+    /**
+     * Edit a project milestone
+     * 
+     * @param Illuminate\Http\Request $request
+     * @param App\Project $project
+     * @return ???
+     */
     public function edit(Request $request, Project $project)
     {
         if (!auth()->user()->can('update', $project)) {
@@ -52,6 +59,14 @@ class ProjectMilestoneController extends Controller
         // @todo view
     }
 
+    /**
+     * Edit a project milestone
+     * 
+     * @param Illuminate\Http\Request $request
+     * @param App\Project $project
+     * @param App\ProjectMilestone $milestone
+     * @return ???
+     */
     public function update(Request $request, Project $project, ProjectMilestone $milestone)
     {
         if (!auth()->user()->can('update', $project)) {
@@ -62,5 +77,23 @@ class ProjectMilestoneController extends Controller
         $milestone->update($request->all());
 
         return redirect()->route('projects.show', $project);
+    }
+
+    /**
+     * Destroy a project milestone
+     * 
+     * @param App\Project $project
+     * @param App\ProjectMilestone $milestone
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Project $project, ProjectMilestone $milestone)
+    {
+        if (!auth()->user()->can('delete', $project)) {
+            return redirect()->route('home');
+        }
+
+        $milestone->delete();
+
+        return redirect()->route('projects.index'); 
     }
 }

@@ -8,7 +8,7 @@ use App\UserSetting;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class UserSettingsTest extends TestCase
+class EditUserSettingsTest extends TestCase
 {
     use RefreshDatabase;
 
