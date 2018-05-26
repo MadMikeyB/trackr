@@ -44,4 +44,37 @@ class Project extends Model
     {
         return timeDiffForHumans($this->timelogs->sum('number_of_seconds'));
     }
+
+    /**
+     * A project exposes how much time has been logged (seconds)
+     * 
+     * @return int
+     */
+    public function getTimeLoggedSecondsAttribute()
+    {
+        return $this->timelogs->sum('number_of_seconds');
+    }
+
+    /**
+     * A project exposes how much of the percentage of time has been logged
+     * 
+     * @return float
+     */
+    public function getPercentageTakenAttribute()
+    {
+        $onePercent = $this->total_seconds / 100;
+        $percentage = min(100, ceil($this->time_logged_seconds / $onePercent));
+
+        return $percentage;
+    }
+
+    /**
+     * A project exposes how much of the percentage of time has been logged
+     * 
+     * @return float
+     */
+    public function getPercentageRemainingAttribute()
+    {
+        return (100 - $this->percentage_taken);
+    }
 }
