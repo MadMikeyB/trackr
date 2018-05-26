@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsTable extends Migration
+class CreateTimeLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('time_logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->text('description');
             $table->unsignedInteger('user_id')->index();
-            $table->integer('total_seconds');
+            $table->unsignedInteger('project_id')->index();
+            $table->integer('number_of_seconds');
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('project_id')->references('id')->on('projects');
         });
     }
 
@@ -33,7 +33,7 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        $table->dropForeign(['user_id']);
+        $table->dropForeign(['user_id', 'project_id']);
         Schema::dropIfExists('projects');
     }
 }

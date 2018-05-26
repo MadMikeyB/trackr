@@ -20,3 +20,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('projects', 'ProjectsController');
+
+// API route model binding not working
+Route::post('/api/logtime/{project}', 'Api\\TimelogController@store')->name('api.timelog.store');
