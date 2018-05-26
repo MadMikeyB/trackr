@@ -13,10 +13,18 @@ As a freelancer, I need to be able to set milestones. Mark a project as 50% comp
 
 ## Feature List (MVP)
 
-Account System
+Account System (Laravel)
+- Tests ✅
+- UI
 Projects
-Time Tracking
+- Tests ✅
+- UI
+Time Tracking 
+- Tests ✅
+- UI
 Notifications
+- Tests ✅
+- UI
 
 ## Technologies
 
