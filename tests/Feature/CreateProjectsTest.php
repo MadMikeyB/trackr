@@ -20,15 +20,20 @@ class CreateProjectsTest extends TestCase
         $this->signIn($user);
         // When they attempt to create a project
         $project = factory(Project::class)->make(['user_id' => $user->id]);
-        $request = $this->post(route('projects.store'), $project->toArray());
+        $response = $this->post(route('projects.store'), $project->toArray());
         // Their project should be persisted in the database
         $this->assertDatabaseHas('projects', $project->toArray());
         // And they should be redirected to the Project Settings page
-        $request->assertStatus(302);
+        $response->assertStatus(302);
     }
 
-    // public function test_an_unauthenticated_user_cannot_create_a_project()
-    // {
-    //     //
-    // }
+    public function test_an_unauthenticated_user_cannot_create_a_project()
+    {
+        // If an un-authenticated user attempts to create a project
+        $project = factory(Project::class)->make();
+        $response = $this->post(route('projects.store'), $project->toArray());
+        
+        // We redirect them to the login page
+        $response->assertStatus(302)->assertRedirect('/login');
+    }
 }
