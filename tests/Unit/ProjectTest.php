@@ -13,90 +13,95 @@ class ProjectTest extends TestCase
 {
     use RefreshDatabase;
 
+    public $project;
+    public $user;
+
+    public function setUp()
+    {
+        parent::setUp();
+        
+        $this->user = factory(User::class)->create();
+
+        $this->project = factory(Project::class)->create(['user_id' => $this->user->id,'total_seconds' => 36000]);
+    }
+
     public function test_it_can_expose_its_url()
     {
-        $project = factory(Project::class)->create(['user_id' => 1]);
+        $expectedUrl = route('projects.show', $this->project);
 
-        $expectedUrl = route('projects.show', $project);
-
-        $this->assertSame($expectedUrl, $project->url());
+        $this->assertSame($expectedUrl, $this->project->url());
     }
 
     public function test_it_can_have_time_logs_attached()
     {
-        $user = factory(User::class)->create();
-        // Given we have a project
-        $project = factory(Project::class)->create(['user_id' => $user->id]);
         // assert the relationship
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $project->timelogs);
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->project->timelogs);
     }
 
     public function test_it_can_expose_how_much_time_has_been_logged()
     {
-        $user = factory(User::class)->create();
-        // Given we have a project
-        $project = factory(Project::class)->create(['user_id' => $user->id]);
         // That has time logged
-        $timelog = factory(TimeLog::class, 2)->create(['number_of_seconds' => 300, 'user_id' => $user->id, 'project_id' => $project->id]);
+        $timelog = factory(TimeLog::class, 2)->create([
+            'number_of_seconds' => 300, 
+            'user_id' => $this->user->id, 
+            'project_id' => $this->project->id
+        ]);
         // The project should be able to tell us how much time has been logged
-        $timelogs = timeDiffForHumans($project->timelogs->sum('number_of_seconds'));
+        $timelogs = timeDiffForHumans($this->project->timelogs->sum('number_of_seconds'));
         // 
-        $this->assertSame($project->time_logged, $timelogs);
+        $this->assertSame($this->project->time_logged, $timelogs);
     }
 
     public function test_it_can_expose_how_much_time_has_been_logged_in_seconds()
     {
-        $user = factory(User::class)->create();
-        // Given we have a project
-        $project = factory(Project::class)->create(['user_id' => $user->id]);
-        // That has time logged
-        $timelog = factory(TimeLog::class, 2)->create(['number_of_seconds' => 300, 'user_id' => $user->id, 'project_id' => $project->id]);
+        // Given we have a project that has time logged
+        $timelog = factory(TimeLog::class, 2)->create([
+            'number_of_seconds' => 300, 
+            'user_id' => $this->user->id, 
+            'project_id' => $this->project->id
+        ]);
         // The project should be able to tell us how much time has been logged
-        $this->assertSame($project->time_logged_seconds, $project->timelogs->sum('number_of_seconds'));
+        $this->assertSame($this->project->time_logged_seconds, $this->project->timelogs->sum('number_of_seconds'));
     }
 
     public function test_it_can_expose_the_percentage_of_time_taken()
     {
-        $user = factory(User::class)->create();
-        // Given we have a project with 10 hours allocated
-        $project = factory(Project::class)->create(['user_id' => $user->id, 'total_seconds' => 36000]);
-        // That has 1 hour logged
-        $timelog = factory(TimeLog::class)->create(['number_of_seconds' => 3600, 'user_id' => $user->id, 'project_id' => $project->id]);
+        // Given we have a project that has 1 hour logged
+        $timelog = factory(TimeLog::class)->create([
+            'number_of_seconds' => 3600, 
+            'user_id' => $this->user->id, 
+            'project_id' => $this->project->id
+        ]);
         // The project should be able to tell us what percentage of the overall time has been taken
         // Work out percentage (Hat tip @ollieread)
-        $onePercent = $project->total_seconds / 100;
-        $percentage = min(100, ceil($project->time_logged_seconds / $onePercent));
+        $onePercent = $this->project->total_seconds / 100;
+        $percentage = min(100, ceil($this->project->time_logged_seconds / $onePercent));
         // The percentage should match the project's percentage
-        $this->assertSame($project->percentage_taken, $percentage);
+        $this->assertSame($this->project->percentage_taken, $percentage);
     }
 
     public function test_it_can_expose_the_percentage_of_time_remaining()
     {
-        $user = factory(User::class)->create();
-        // Given we have a project with 10 hours allocated
-        $project = factory(Project::class)->create(['user_id' => $user->id, 'total_seconds' => 36000]);
-        // That has 1 hour logged
-        $timelog = factory(TimeLog::class)->create(['number_of_seconds' => 3600, 'user_id' => $user->id, 'project_id' => $project->id]);
+        // Given we have a project that has 1 hour logged
+        $timelog = factory(TimeLog::class)->create([
+            'number_of_seconds' => 3600, 
+            'user_id' => $this->user->id, 
+            'project_id' => $this->project->id
+        ]);
         // The project should be able to tell us what percentage of the overall time is remaining (90%)
-        $percentage = (100 - $project->percentage_taken);
-        $this->assertSame($project->percentage_remaining, $percentage);
+        $percentage = (100 - $this->project->percentage_taken);
+        $this->assertSame($this->project->percentage_remaining, $percentage);
     }
 
     public function test_it_can_expose_its_user()
     {
-        // Given we have a project
-        $user = factory(User::class)->create();
-        $project = factory(Project::class)->create(['user_id' => $user->id]);
         // assert the relationship
-        $this->assertInstanceOf('App\User', $project->fresh()->user);
+        $this->assertInstanceOf('App\User', $this->project->user);
     }
 
     public function test_it_can_have_milestones()
     {
-        // Given we have a project
-        $user = factory(User::class)->create();
-        $project = factory(Project::class)->create(['user_id' => $user->id]);
         // assert the relationship
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $project->milestones);
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->project->milestones);
     }
 }
