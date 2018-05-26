@@ -12,10 +12,8 @@ class UserSettingsTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_a_user_can_set_their_hourly_rate()
+    public function test_an_authenticated_user_can_set_their_hourly_rate()
     {
-        $this->withoutExceptionHandling();
-        
         // Given we have a user
         $user = factory(User::class)->create();
         // Who is signed in
@@ -27,5 +25,25 @@ class UserSettingsTest extends TestCase
         $this->assertDatabaseHas('user_settings', $settings->toArray());
         // And the user should be redirected to their settings page
         $response->assertRedirect(route('user.settings.index'))->assertStatus(302);
+    }
+
+    public function test_an_authenticated_user_can_access_the_settings_page()
+    {
+        // Given we have a user
+        $user = factory(User::class)->create();
+        // Who is signed in
+        $this->signIn($user);
+        // And they try to access the settings page
+        $response = $this->get(route('user.settings.index'));
+        // They should be allowed
+        $response->assertStatus(200);
+        // And they should see "Settings"
+        $response->assertSee('Settings');
+    }
+
+    public function test_an_unauthenticated_user_cannot_access_the_settings_page()
+    {
+        $response = $this->get(route('user.settings.index'));
+        $response->assertStatus(302)->assertRedirect('/login');
     }
 }
