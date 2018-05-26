@@ -4,6 +4,7 @@
 
 I am a freelancer.
 As a freelancer, I need to be able to set my hourly rate in my dashboard.
+As a freelancer, I need to be able to log time against a project.
 As a freelancer, I need to be able to create projects to log time against. ✅
 As a freelancer, I need to be able to set a total amount of time a project has been quoted for. ✅
 As a freelancer, I need to be able to see how much total time I have spent against the project.
