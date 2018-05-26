@@ -29,6 +29,22 @@ class ProjectsController extends Controller
     }
 
     /**
+     * Show a single project
+     * 
+     * @param App\Project $project
+     * @return App\Project
+     */
+    public function show(Project $project)
+    {
+        if (!auth()->user()->can('view', $project)) {
+            return redirect()->route('home');
+        }
+        
+        // @todo view
+        return $project;
+    }
+
+    /**
      * Store a new project in the database
      * 
      * @param Request $request
