@@ -36,4 +36,36 @@ class User extends Authenticatable
     {
         return $this->hasMany(Project::class);
     }
+
+    /**
+     * A user has many timelogs
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function timelogs()
+    {
+        return $this->hasMany(TimeLog::class);
+    }
+
+
+    /**
+     * A user has many milestones
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function milestones()
+    {
+        return $this->hasMany(ProjectMilestone::class);
+    }
+
+
+    /**
+     * Get the total time logged for this user
+     * 
+     * @return int
+     */
+    public function getTotalTimeLoggedAttribute()
+    {
+        return $this->timelogs->sum('number_of_seconds');
+    }
 }

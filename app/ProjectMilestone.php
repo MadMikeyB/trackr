@@ -14,4 +14,7 @@ class ProjectMilestone extends Model
 
     /* @var $dates The fields which are mutated to carbon instances */
     public $dates = ['completed_at'];
+
+    // belongsTo Project
+    // belongsTo User
 }
