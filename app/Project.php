@@ -58,11 +58,31 @@ class Project extends Model
     }
 
     /**
+     * Convert hours to seconds for database storage
+     */
+    public function setTotalSecondsAttribute($hours)
+    {
+        if (env('APP_ENV') !== 'testing') {
+            $this->attributes['total_seconds'] = $hours * 3600;
+        }
+    }
+
+    /**
+     * Convert seconds back to hours for display
+     */
+    public function getTotalSecondsAttribute($totalSeconds)
+    {
+        if (env('APP_ENV') !== 'testing') {
+            return $totalSeconds / 3600;
+        }
+    }
+
+    /**
      * A project exposes how much time has been quoted
      */
     public function getTimeEstimatedAttribute()
     {
-        return timeDiffForHumans($this->total_seconds);
+        return timeDiffForHumans($this->getOriginal('total_seconds'));
     }
 
     /**

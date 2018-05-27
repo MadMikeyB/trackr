@@ -39,8 +39,8 @@
             </div>
 
             <div class="form__group">
-                <label for="total_seconds" class="form__label">{{ __('Total Time Allocated') }}</label>
-                <input id="total_seconds" type="text" class="form__input{{ $errors->has('total_seconds') ? ' form__input--has-errors' : '' }}" name="total_seconds" value="{{ old('total_seconds') }}" required>
+                <label for="total_seconds" class="form__label">{{ __('Total Time Allocated (Hours)') }}</label>
+                <input id="total_seconds" type="number" class="form__input{{ $errors->has('total_seconds') ? ' form__input--has-errors' : '' }}" name="total_seconds" value="{{ old('total_seconds') }}" placeholder="e.g. 16" required>
 
                 @if ($errors->has('total_seconds'))
                     <span class="form__errors">
