@@ -16,8 +16,40 @@
                     <li class="list-group__item">
                         <i class="fas fa-project-diagram"></i>
                         <a href="{{route('projects.show', $project)}}" title="{{$project->title}}">
-                            {{$project->title}}
+                            <strong>{{$project->title}}</strong>
                         </a>
+                        <div class="row">
+                            <div class="col-2">
+                                <small>
+                                    Time Estimated: <strong>{{$project->time_estimated}}</strong>
+                                </small> 
+                            </div>
+                            <div class="col-2">
+                                <small>
+                                    Time Used: <strong>{{$project->percentage_taken}}%</strong>
+                                </small>
+                            </div>
+                            <div class="col-2">
+                                <small>
+                                    Time Remaining: <strong>{{$project->percentage_remaining}}% </strong>
+                                </small>
+                            </div>
+                            <div class="col-2">
+                                <small>
+                                    Milestones: <strong>{{$project->milestones->count()}}</strong>
+                                </small> 
+                            </div>
+                            <div class="col-2">
+                                <small>
+                                    Completed Milestones: <strong>{{$project->completed_milestones}}</strong>
+                                </small> 
+                            </div>
+                            <div class="col-2">
+                                <small>
+                                    Value: <strong>{{number_format($project->total_cost_quoted)}}  {{$project->user->settings->currency}}</strong>
+                                </small>
+                            </div>
+                        </div>
                     </li>
                 @endforeach
             @else

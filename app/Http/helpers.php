@@ -14,7 +14,7 @@ function timeDiffForHumans(int $diffInSeconds)
     foreach ($data as $k => $v) {
         if ($diffInSeconds >= $v) {
             $diff = floor($diffInSeconds / $v);
-            $result .= "$diff " . ($diff > 1 ? $k : substr($k, 0, -1));
+            $result .= " $diff " . ($diff > 1 ? $k : substr($k, 0, -1));
             $diffInSeconds -= $v * $diff;
         }
     }

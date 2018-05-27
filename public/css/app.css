@@ -297,6 +297,12 @@ img {
   box-sizing: border-box;
 }
 
+@media all and (max-width: 769px) {
+  [class^="col-"] {
+    width: 100% !important;
+  }
+}
+
 [class^="col-"]:last-child {
   margin-right: 0%;
 }

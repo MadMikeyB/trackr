@@ -55,7 +55,7 @@
                 </p>
                 @unless ($project->timelogs->isEmpty())
                 <ul class="list-group">
-                    @foreach ($project->timelogs as $timelog)
+                    @foreach ($project->timelogs->sortByDesc('created_at') as $timelog)
                         <li class="list-group__item">
                             <i class="fas fa-clock"></i>
                             {{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('jS F Y \a\t H:i:s') }}
