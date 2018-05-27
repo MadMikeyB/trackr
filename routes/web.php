@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'welcome')->name('static.landing');
+Route::view('/terms', 'static.terms')->name('static.terms');
+Route::view('/privacy', 'static.privacy')->name('static.privacy');
+Route::view('/pricing', 'static.pricing')->name('static.pricing');
+Route::view('/features', 'static.features')->name('static.features');
 
 Auth::routes();
 

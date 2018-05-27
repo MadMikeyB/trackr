@@ -153,6 +153,40 @@ table {
   border-spacing: 0;
 }
 
+.u-font-fluid {
+  font-family: "Fluid Lighter", sans-serif;
+}
+
+.u-logo-text-darker {
+  color: #574063;
+  font-size: 3rem;
+  font-family: "Fluid Lighter", sans-serif;
+}
+
+.u-logo-text-darker span {
+  color: #FFF;
+}
+
+.u-logo-text-offwhite {
+  color: #8D6A9F;
+  font-size: 3rem;
+  font-family: "Fluid Lighter", sans-serif;
+}
+
+.u-logo-text-offwhite span {
+  color: #b1a8be;
+}
+
+.u-logo-text {
+  color: #8D6A9F;
+  font-size: 3rem;
+  font-family: "Fluid Lighter", sans-serif;
+}
+
+.u-logo-text span {
+  color: #FFF;
+}
+
 *,
 *:after,
 *:before {
@@ -225,15 +259,80 @@ img {
   margin: 0 auto;
 }
 
+.row:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.row + .row {
+  margin-top: 3%;
+}
+
+[class^="col-"] {
+  float: left;
+  margin-right: 3%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[class^="col-"]:last-child {
+  margin-right: 0%;
+}
+
+.col-1 {
+  width: 5.58333333%;
+}
+
+.col-2 {
+  width: 14.16666667%;
+}
+
+.col-3 {
+  width: 22.75%;
+}
+
+.col-4 {
+  width: 31.33333333%;
+}
+
+.col-5 {
+  width: 39.91666667%;
+}
+
+.col-6 {
+  width: 48.5%;
+}
+
+.col-7 {
+  width: 57.08333333%;
+}
+
+.col-8 {
+  width: 65.66666667%;
+}
+
+.col-9 {
+  width: 74.25%;
+}
+
+.col-10 {
+  width: 82.83333333%;
+}
+
+.col-11 {
+  width: 91.41666667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
 a {
   color: #b199bd;
 }
 
 a:hover {
-  color: #c8b8d1;
-}
-
-a:visited {
   color: #c8b8d1;
 }
 
@@ -520,10 +619,10 @@ ul:not(.menu).dark-bullets li:before {
 
 .sloped-section:after {
   bottom: 0;
-  -webkit-transform: skewY(3deg);
-          transform: skewY(3deg);
-  -webkit-transform-origin: 0 100%;
-          transform-origin: 0 100%;
+  -webkit-transform: skewY(-3deg);
+          transform: skewY(-3deg);
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
 }
 
 .sloped-section--reversed {
@@ -546,10 +645,10 @@ ul:not(.menu).dark-bullets li:before {
 
 .sloped-section--reversed:after {
   bottom: 0;
-  -webkit-transform: skewY(-3deg);
-          transform: skewY(-3deg);
-  -webkit-transform-origin: 100%;
-          transform-origin: 100%;
+  -webkit-transform: skewY(3deg);
+          transform: skewY(3deg);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
 }
 
 .sloped-section--both {
@@ -599,6 +698,55 @@ ul:not(.menu).dark-bullets li:before {
           transform: skewY(3deg);
   -webkit-transform-origin: 0 100%;
           transform-origin: 0 100%;
+}
+
+.sloped-section--both-reverse {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.sloped-section--both-reverse:before {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+
+.sloped-section--both-reverse:before {
+  top: 0;
+  -webkit-transform: skewY(-3deg);
+          transform: skewY(-3deg);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+.sloped-section--both-reverse:after {
+  background: inherit;
+  content: '';
+  display: block;
+  height: 50%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  -webkit-backface-visibility: hidden;
+}
+
+.sloped-section--both-reverse:after {
+  bottom: 0;
+  -webkit-transform: skewY(-3deg);
+          transform: skewY(-3deg);
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
 }
 
 .sloped-section--light {

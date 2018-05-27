@@ -1,0 +1,37 @@
+.u {
+    &-font {
+        &-fluid {
+            font-family: $headingfont;
+        }
+    }
+
+    &-logo-text-darker {
+        color: darken($primary, 20%);
+        font-size: 3rem;
+        font-family: $headingfont;
+
+        span {
+            color: $white;
+        }
+    }
+
+    &-logo-text-offwhite {
+        color: $primary;
+        font-size: 3rem;
+        font-family: $headingfont;
+
+        span {
+            color: lighten($grey, 5%);
+        }
+    }
+
+    &-logo-text {
+        color: $primary;
+        font-size: 3rem;
+        font-family: $headingfont;
+
+        span {
+            color: $white;
+        }
+    }
+}

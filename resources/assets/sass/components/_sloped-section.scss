@@ -2,12 +2,12 @@
     padding: 5rem;
     margin-bottom: 10rem;
 
-    @include angle(after, true, 3deg);
+    @include angle(after, false, 3deg);
 
     &--reversed {
         margin-top: 1rem;
 
-        @include angle(after, false, 3deg);
+        @include angle(after, true, 3deg);
     }
 
     &--both {
@@ -16,6 +16,14 @@
 
         @include angle(before, false, 3deg);
         @include angle(after, true, 3deg);
+    }
+
+    &--both-reverse {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        @include angle(before, true, 3deg);
+        @include angle(after, false, 3deg);
     }
 
     &--light {

@@ -2,64 +2,74 @@
 
 @section('content')
 
-<div class="sloped-section sloped-section--primary">
-    <h1>Welcome to Trackr</h1>
-    <h2>Welcome to Trackr</h2>
-    <h3>Welcome to Trackr</h3>
-    <h4>Welcome to Trackr</h4>
-    <h5>Welcome to Trackr</h5>
-    <h6>Welcome to Trackr</h6>
-    <p>Lorem ipsum dolor sit amet, <strong>consectetur adipisicing elit</strong>. A quae, provident, at, doloremque possimus accusantium explicabo officia delectus expedita facilis quisquam aliquam. Nostrum eveniet placeat tempore accusamus, provident harum fuga!</p>
-    <p>Distinctio nostrum, officia, <a href="#MIKEY">necessitatibus consectetur aliquid reiciendis</a> unde quae aliquam obcaecati molestiae <b>aspernatur</b> culpa fugit, ex quo illo. Obcaecati sunt atque aliquam perferendis eligendi voluptatum, suscipit, fugit ipsa nesciunt hic.</p>
-    <p>Consequuntur totam illo unde inventore! Molestiae earum, <em>iusto laboriosam aperiam magnam</em> veniam cumque, nam neque delectus deleniti sapiente nostrum quisquam ea magni ipsum explicabo <u>itaque recusandae a porro. Dolorum, quibusdam</u>.</p>
+<div class="sloped-section sloped-section--centered sloped-section--primary">
+    <h1>Your Money or Your Time?<br> Why not do both?</h1>
+    <h2><span class="u-logo-text-darker">my<span>track</span>r</span> allows you to efficiently track your time, giving you cost estimates for time spent.</h2>
+    <a href="{{ route('register')}}" class="button button--solid-secondary">Sign Up For Free</a>
 </div>
 
 <div class="section section--centered">
-    <h1>Welcome to Trackr</h1>
-    <a href="#primary" class="button  button--primary">Button Primary</a>
-    <a href="#secondary" class="button button--secondary">Button Secondary</a>
+    <h1>What's so special about <span class="u-logo-text-offwhite">my<span>track</span>r</span>?</h1>
 
-    <a href="#primarysolid" class="button button--solid-primary">Button Solid Primary</a>
-    <a href="#secondarysolid" class="button button--solid-secondary">Button Solid Secondary</a>
+    <div class="row">
+        <div class="col-4">
+            <h3>A Feature</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ea odio corporis labore, quam cupiditate aut voluptas incidunt itaque voluptatum a doloribus doloremque, laudantium iure iusto mollitia obcaecati beatae deserunt.</p>    
+        </div>
+        <div class="col-4">
+            <h3>A Feature</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, doloremque dolores similique corrupti est quibusdam eos deserunt saepe officia asperiores! Praesentium eligendi voluptatum eius sequi cumque quaerat, cupiditate numquam itaque.</p>
+        </div>
+        <div class="col-4">
+            <h3>A Feature</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, doloremque dolores similique corrupti est quibusdam eos deserunt saepe officia asperiores! Praesentium eligendi voluptatum eius sequi cumque quaerat, cupiditate numquam itaque.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <h3>A Feature</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam ea odio corporis labore, quam cupiditate aut voluptas incidunt itaque voluptatum a doloribus doloremque, laudantium iure iusto mollitia obcaecati beatae deserunt.</p>    
+        </div>
+        <div class="col-4">
+            <h3>A Feature</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, doloremque dolores similique corrupti est quibusdam eos deserunt saepe officia asperiores! Praesentium eligendi voluptatum eius sequi cumque quaerat, cupiditate numquam itaque.</p>
+        </div>
+        <div class="col-4">
+            <h3>A Feature</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, doloremque dolores similique corrupti est quibusdam eos deserunt saepe officia asperiores! Praesentium eligendi voluptatum eius sequi cumque quaerat, cupiditate numquam itaque.</p>
+        </div>
+    </div>
 </div>
 
-<div class="sloped-section sloped-section--reversed sloped-section--primary">
-    <p>Voluptas perferendis fugit adipisci, dolores laboriosam. Beatae, commodi? Aut aliquid cumque quaerat impedit quibusdam incidunt ratione sapiente eligendi molestiae veniam eum placeat dolorem id, eaque, et suscipit doloribus. Beatae, harum.</p>
-    <p>Nobis vero sunt placeat dolor veniam harum soluta tenetur ipsam eligendi, non saepe ipsa nihil doloribus rem aliquam commodi quos ut nemo, reprehenderit, accusamus corporis repellat ullam optio. Nostrum, obcaecati.</p>
-    <p>Magni nisi quibusdam, totam. At minima, illum. Accusantium, recusandae cumque quibusdam consequuntur soluta nihil optio velit ipsum quae sapiente voluptas quam a nam dignissimos iure maxime ad modi necessitatibus accusamus.</p>
-    <p>Corporis eaque non, accusamus deserunt nobis, architecto facilis laborum. Eum quos atque recusandae iste id consequuntur. Vitae, perferendis nulla enim laborum inventore distinctio accusamus beatae eaque tempora eligendi dicta, laboriosam!</p>
-    <p>Veniam eos a ipsa aperiam debitis maiores odio explicabo iusto! Esse ad cum nihil porro deserunt neque, debitis animi similique cumque velit est odit aliquam nemo laborum unde quas itaque.</p>
-    <ul class="dark-bullets">
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-        <li>four</li>
-        <li>five</li>
-    </ul>
+<div class="sloped-section sloped-section--centered sloped-section--both-reverse sloped-section--muted">
+    <h1>A Call to Action</h1>
+    <div class="row">
+        <div class="col-3">&nbsp;</div>
+        <div class="col-6">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed laborum suscipit architecto nulla rem, quo ducimus at minima voluptas repellendus nihil itaque numquam nam magni reprehenderit! Aliquam, impedit eos. Enim.</p>
+            <a href="{{ route('register')}}" class="button button--solid-primary">Sign Up For Free</a>
+        </div>
+        <div class="col-3">&nbsp;</div>
+    </div>
 </div>
 
-<div class="sloped-section sloped-section--muted">
-    <p>At quae neque officia ab omnis vero eaque. Maiores, sunt, esse? Possimus illum architecto esse natus, pariatur dolore debitis sit ipsum reprehenderit. Harum nemo temporibus perferendis perspiciatis veniam at assumenda.</p>
-    <p>A odit aliquam, odio quia placeat iure eligendi tempora accusamus quasi ut iusto recusandae dicta, facilis officia labore illum quod veniam harum nulla possimus. Error deserunt ullam eum illum labore!</p>
-    <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-        <li>four</li>
-        <li>five</li>
-    </ul>
-</div>
-
-<div class="sloped-section sloped-section--both sloped-section--muted">
-    <p>At quae neque officia ab omnis vero eaque. Maiores, sunt, esse? Possimus illum architecto esse natus, pariatur dolore debitis sit ipsum reprehenderit. Harum nemo temporibus perferendis perspiciatis veniam at assumenda.</p>
-    <p>A odit aliquam, odio quia placeat iure eligendi tempora accusamus quasi ut iusto recusandae dicta, facilis officia labore illum quod veniam harum nulla possimus. Error deserunt ullam eum illum labore!</p>
-    <ul>
-        <li>one</li>
-        <li>two</li>
-        <li>three</li>
-        <li>four</li>
-        <li>five</li>
-    </ul>
+<div class="section section--centered">
+    <h1>Get In Touch</h1>
+    <div class="row">
+        <div class="col-4">
+            <h2>Email</h2>
+            <a href="mailto:me@mikeylicio.us">me@mikeylicio.us</a>
+        </div>
+        <div class="col-4">
+            <h2>Twitter</h2>
+            <a href="https://www.twitter.com/madmikeyb">@madmikeyb</a>
+        </div>
+        <div class="col-4">
+            <h2>Slack</h2>
+            <a href="https://laravelphp.uk/login/slack">LaravelUK</a>
+        </div>
+    </div>
 </div>
 
 @endsection
