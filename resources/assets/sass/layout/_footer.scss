@@ -2,25 +2,36 @@
     margin-top: 10rem;
     width: 100%;
     background-color: $offblack;
-    padding: 0.5rem;
+    padding: 1.5rem;
     text-align: center;
     color: $white;
+
+    a {
+        color: $white;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
 
     &__right {
         display: inline-block;
         text-align: right;
         vertical-align: middle;
-        width: 50%;
+        width: 33.33%;
     }
 
     &__left {
         display: inline-block;
         text-align: left;
         vertical-align: middle;
-        width: 50%;
+        width: 33.33%;
     }
 
-    p {
-        margin: 0.5rem 0;
+    &__center {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        width: 33.33%;
     }
 }

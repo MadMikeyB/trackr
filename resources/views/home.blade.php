@@ -8,18 +8,23 @@
 </div>
 
 <div class="section">
-
-    <h1>Your Projects</h1>
-
-    <ul>
-        @unless($projects->isEmpty())
-            @foreach ($projects as $project)
-                <li><a href="{{route('projects.show', $project)}}" title="{{$project->title}}">{{$project->title}}</a></li>
-            @endforeach
-        @else
-            <li>You don't seem to have any projects yet!</li>
-        @endunless
-    </ul>
+    <div class="section__container">
+        <h1>Your Projects</h1>
+        <ul class="list-group">
+            @unless($projects->isEmpty())
+                @foreach ($projects as $project)
+                    <li class="list-group__item">
+                        <i class="fas fa-project-diagram"></i>
+                        <a href="{{route('projects.show', $project)}}" title="{{$project->title}}">
+                            {{$project->title}}
+                        </a>
+                    </li>
+                @endforeach
+            @else
+                <li>You don't seem to have any projects yet!</li>
+            @endunless
+        </ul>
+    </div>
 </div>
 
 @endsection

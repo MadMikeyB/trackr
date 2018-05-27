@@ -54,9 +54,9 @@
                     <stopwatch :project="{{$project}}"></stopwatch>
                 </p>
                 @unless ($project->timelogs->isEmpty())
-                <ul class="timelogs">
+                <ul class="list-group">
                     @foreach ($project->timelogs as $timelog)
-                        <li class="timelogs__item">
+                        <li class="list-group__item">
                             <i class="fas fa-clock"></i>
                             {{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('jS F Y \a\t H:i:s') }}
                         </li>
