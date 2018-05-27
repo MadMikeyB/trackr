@@ -14,11 +14,19 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600">
+
 </head>
 <body>
+    @include('layouts.header')
+    {{-- HACKY --}}
+    <div class="spacer" style="padding-bottom: 63px"></div>
     <div id="app">
         @yield('content')
     </div>
+    
+    @include('layouts.footer')
 </body>
 </html>

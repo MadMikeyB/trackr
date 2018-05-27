@@ -1,0 +1,53 @@
+.button {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+
+    &--primary {
+        border: 2px solid $primary;
+        color: $primary;
+
+        &:hover {
+            background-color: $primary;
+            color: $white;
+        }
+    }
+
+    &--secondary {
+        border: 2px solid $secondary;
+        color: $secondary;
+
+        &:hover {
+            background-color: $secondary;
+            color: $white;
+        }
+    }
+
+    &--solid {
+        &-primary {
+            background-color: $primary;
+            border: 2px solid $primary;
+            color: $white;
+
+            &:hover {
+                background-color: darken($primary, 25%);
+                border: 2px solid darken($primary, 25%);
+                color: $white;
+            }
+        }
+
+        &-secondary {
+            background-color: $secondary;
+            border: 2px solid $secondary;
+            color: $white;
+
+            &:hover {
+                background-color: darken($secondary, 25%);
+                border: 2px solid darken($secondary, 25%);
+                color: $white;
+            }
+        }
+    }
+}

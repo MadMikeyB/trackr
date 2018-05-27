@@ -1,0 +1,9 @@
+.header {
+    position: fixed;
+    display: block;
+    float: left;
+    width: 100%;
+    background-color: $offblack;
+    padding: 1rem 0;
+    z-index: 2;
+}

@@ -1,0 +1,95 @@
+a {
+    color: lighten($brand, 15%);
+
+    &:hover {
+        color: lighten($brand, 25%);
+    }
+
+    &:visited {
+        color: lighten($brand, 25%);
+    }
+
+    &:active {
+        color: darken($brand, 15%);
+    }
+}
+
+p {
+    margin: 1.25rem 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 1.5rem 0;
+    letter-spacing: 0.1rem;
+}
+
+h1 {
+    font-size: $fontsize * 2;
+}
+
+h2 {
+    font-size: $fontsize * 1.8;
+}
+
+h3 {
+    font-size: $fontsize * 1.5;
+}
+
+h4 {
+    font-size: $fontsize * 1.4;
+}
+
+h5 {
+    font-size: $fontsize * 1.2;
+}
+
+h6 {
+    font-size: $fontsize * 1.1;
+}
+
+strong,
+b {
+    font-weight: 600;
+
+    &.semi-bold {
+        font-weight: 500;
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+ul:not(.menu) {
+    margin: 0.75em 0;
+    padding: 0 1em;
+    list-style: none;
+
+    li:before {
+        content: "";
+        border-color: transparent $brand;
+        border-style: solid;
+        border-width: 0.35rem 0 0.35rem 0.45rem;
+        display: block;
+        height: 0;
+        width: 0;
+        left: -1em;
+        top: 1em;
+        position: relative;
+    }
+
+    &.dark-bullets {
+        li:before {
+            content: "";
+            border-color: transparent $tertiary;
+            border-style: solid;
+            border-width: 0.35rem 0 0.35rem 0.45rem;
+            display: block;
+            height: 0;
+            width: 0;
+            left: -1em;
+            top: 1em;
+            position: relative;
+        }
+    }
+}

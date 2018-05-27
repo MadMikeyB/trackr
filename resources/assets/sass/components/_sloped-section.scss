@@ -1,6 +1,43 @@
 .sloped-section {
+    padding: 5rem;
+    margin-bottom: 10rem;
+
+    @include angle(after, true, 3deg);
+
+    &--reversed {
+        margin-top: 1rem;
+
+        @include angle(after, false, 3deg);
+    }
+
+    &--both {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        @include angle(before, false, 3deg);
+        @include angle(after, true, 3deg);
+    }
+
+    &--light {
+        background-color: $offwhite;
+    }
+
     &--primary {
-        color: $offwhite;
         background-color: $brand;
+        color: $white;
+    }
+
+    &--secondary {
+        background-color: $secondary;
+        color: $white;
+    }
+
+    &--muted {
+        background-color: $tertiary;
+        color: $white;
+    }
+
+    &--centered {
+        text-align: center;
     }
 }

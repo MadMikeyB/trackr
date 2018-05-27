@@ -1,0 +1,26 @@
+.footer {
+    margin-top: 10rem;
+    width: 100%;
+    background-color: $offblack;
+    padding: 0.5rem;
+    text-align: center;
+    color: $white;
+
+    &__right {
+        display: inline-block;
+        text-align: right;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    &__left {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
+}

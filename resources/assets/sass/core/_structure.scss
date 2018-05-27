@@ -1,0 +1,14 @@
+.wrapper {
+    @extend .clear;
+
+    max-width: $lrg;
+    width: 95%;
+    margin: 0 auto;
+}
+
+// helper for `anything`__container
+[class*="__container"] {
+    @extend .wrapper;
+
+    @extend .clear;
+}
