@@ -177,6 +177,10 @@ table {
   color: #b1a8be;
 }
 
+.u-logo-text-offwhite-smaller {
+  font-size: 1.75rem;
+}
+
 .u-logo-text {
   color: #8D6A9F;
   font-size: 3rem;
@@ -187,12 +191,28 @@ table {
   color: #FFF;
 }
 
+.u-logo-text-smaller {
+  font-size: 1.75rem;
+}
+
 .u-pull-right {
   float: right;
 }
 
 .u-padding {
   padding: 0.5rem;
+}
+
+.u-font-size-sm {
+  font-size: 1.3rem;
+}
+
+.u-font-size-md {
+  font-size: 1.6rem;
+}
+
+.u-font-size-lg {
+  font-size: 1.8rem;
 }
 
 *,
@@ -379,6 +399,7 @@ h5,
 h6 {
   margin: 1.5rem 0;
   letter-spacing: 0.1rem;
+  font-weight: 400;
 }
 
 h1 {

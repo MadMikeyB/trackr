@@ -15,7 +15,7 @@
                 @foreach ($projects as $project)
                     <li class="list-group__item">
                         <i class="fas fa-project-diagram"></i>
-                        <a href="{{route('projects.show', $project)}}" title="{{$project->title}}">
+                        <a href="{{route('projects.show', $project)}}" title="{{$project->title}}" class="u-font-size-md">
                             <strong>{{$project->title}}</strong>
                         </a>
                         <div class="row">

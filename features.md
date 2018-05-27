@@ -15,13 +15,13 @@ As a freelancer, I need to be able to set milestones. Mark a project as 50% comp
 
 Account System (Laravel)
 - Tests ✅
-- UI
+- UI ✅
 Projects
 - Tests ✅
-- UI
+- UI ✅
 Time Tracking 
 - Tests ✅
-- UI
+- UI ✅
 Notifications
 - Tests ✅
 - UI

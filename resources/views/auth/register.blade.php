@@ -3,7 +3,7 @@
 @section('content')
 <div class="sloped-section sloped-section--centered sloped-section--primary">
     <h1>Sign Up For Free!</h1>
-    <h2>All memberships are free whilst <span class="u-logo-text-darker">my<span>track</span>r</span> is in beta!</h2>
+    <h2>All memberships are free whilst <span class="u-logo-text-darker">my<span>track</span>r</span> is in Early Access!</h2>
 </div>
 
 <div class="section">

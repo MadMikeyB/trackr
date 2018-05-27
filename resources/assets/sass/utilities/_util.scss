@@ -23,6 +23,10 @@
         span {
             color: lighten($grey, 5%);
         }
+
+        &-smaller {
+            font-size: 1.75rem;
+        }
     }
 
     &-logo-text {
@@ -32,6 +36,10 @@
 
         span {
             color: $white;
+        }
+
+        &-smaller {
+            font-size: 1.75rem;
         }
     }
 
@@ -43,5 +51,19 @@
 
     &-padding {
         padding: 0.5rem;
+    }
+
+    &-font-size {
+        &-sm {
+            font-size: 1.3rem;
+        }
+
+        &-md {
+            font-size: 1.6rem;
+        }
+
+        &-lg {
+            font-size: 1.8rem;
+        }
     }
 }
