@@ -1,5 +1,13 @@
 let mix = require('laravel-mix');
 
+mix.webpackConfig({
+    module: {
+        rules: [{
+            test: /\.scss$/,
+            loader: "import-glob-loader"
+        },
+    ]}
+});
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

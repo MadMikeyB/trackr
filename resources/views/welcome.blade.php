@@ -1,95 +1,18 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Trackr</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+<div class="sloped-section--primary">
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quae, provident, at, doloremque possimus accusantium explicabo officia delectus expedita facilis quisquam aliquam. Nostrum eveniet placeat tempore accusamus, provident harum fuga!</div>
+    <div>Distinctio nostrum, officia, necessitatibus consectetur aliquid reiciendis unde quae aliquam obcaecati molestiae aspernatur culpa fugit, ex quo illo. Obcaecati sunt atque aliquam perferendis eligendi voluptatum, suscipit, fugit ipsa nesciunt hic.</div>
+    <div>Consequuntur totam illo unde inventore! Molestiae earum, iusto laboriosam aperiam magnam veniam cumque, nam neque delectus deleniti sapiente nostrum quisquam ea magni ipsum explicabo itaque recusandae a porro. Dolorum, quibusdam.</div>
+    <div>Voluptas perferendis fugit adipisci, dolores laboriosam. Beatae, commodi? Aut aliquid cumque quaerat impedit quibusdam incidunt ratione sapiente eligendi molestiae veniam eum placeat dolorem id, eaque, et suscipit doloribus. Beatae, harum.</div>
+    <div>Nobis vero sunt placeat dolor veniam harum soluta tenetur ipsam eligendi, non saepe ipsa nihil doloribus rem aliquam commodi quos ut nemo, reprehenderit, accusamus corporis repellat ullam optio. Nostrum, obcaecati.</div>
+    <div>Magni nisi quibusdam, totam. At minima, illum. Accusantium, recusandae cumque quibusdam consequuntur soluta nihil optio velit ipsum quae sapiente voluptas quam a nam dignissimos iure maxime ad modi necessitatibus accusamus.</div>
+    <div>Corporis eaque non, accusamus deserunt nobis, architecto facilis laborum. Eum quos atque recusandae iste id consequuntur. Vitae, perferendis nulla enim laborum inventore distinctio accusamus beatae eaque tempora eligendi dicta, laboriosam!</div>
+    <div>Veniam eos a ipsa aperiam debitis maiores odio explicabo iusto! Esse ad cum nihil porro deserunt neque, debitis animi similique cumque velit est odit aliquam nemo laborum unde quas itaque.</div>
+    <div>At quae neque officia ab omnis vero eaque. Maiores, sunt, esse? Possimus illum architecto esse natus, pariatur dolore debitis sit ipsum reprehenderit. Harum nemo temporibus perferendis perspiciatis veniam at assumenda.</div>
+    <div>A odit aliquam, odio quia placeat iure eligendi tempora accusamus quasi ut iusto recusandae dicta, facilis officia labore illum quod veniam harum nulla possimus. Error deserunt ullam eum illum labore!</div>
+</div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Trackr
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+@endsection
