@@ -26,7 +26,10 @@ class TimeLogController extends Controller
             return redirect()->route('home');
         }
 
-        $project->timelogs()->create($request->all());
+        $project->timelogs()->create([
+            'user_id' => $request->user()->id,
+            'number_of_seconds' => $request->number_of_seconds
+        ]);
         
         if ($request->expectsJson()) {
             return response(['success' => true, 'project' => $project], 201);

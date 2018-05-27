@@ -115,7 +115,7 @@ class Project extends Model
      */
     public function getPercentageTakenAttribute()
     {
-        $onePercent = $this->total_seconds / 100;
+        $onePercent = $this->getOriginal('total_seconds') / 100;
         $percentage = min(100, ceil($this->time_logged_seconds / $onePercent));
 
         return $percentage;

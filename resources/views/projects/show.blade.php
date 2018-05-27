@@ -39,16 +39,14 @@
                 @unless ($project->timelogs->isEmpty())
                 <ul>
                     @foreach ($project->timelogs as $timelog)
-                        <li>{{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('j fS Y') }}</li>
+                        <li>{{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('jS F Y \a\t H:i:s') }}</li>
                     @endforeach
                 </ul>
                 @else
                     <p>No time logs have been created!</p>
                 @endunless
                 <p>
-                    <a href="" class="button button--block button--solid-primary">
-                        Log Time
-                    </a>
+                    <stopwatch :project="{{$project}}"></stopwatch>
                 </p>
             </div>
             <!-- Milestones -->
