@@ -65,7 +65,7 @@ class ProjectsController extends Controller
         // @todo validation
         $project = auth()->user()->projects()->create($request->all());
 
-        return redirect()->route('projects.edit', $project);
+        return redirect()->route('projects.show', $project);
     }
 
     /**

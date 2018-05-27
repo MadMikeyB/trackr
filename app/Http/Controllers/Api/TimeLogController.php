@@ -6,7 +6,7 @@ use App\Project;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TimeLogController extends Controller
+class TimelogController extends Controller
 {
 
     public function __construct()
