@@ -62,8 +62,11 @@ class Project extends Model
      */
     public function setTotalSecondsAttribute($hours)
     {
+        
         if (env('APP_ENV') !== 'testing') {
             $this->attributes['total_seconds'] = $hours * 3600;
+        } else {
+            $this->attributes['total_seconds'] = $hours;
         }
     }
 
@@ -74,6 +77,8 @@ class Project extends Model
     {
         if (env('APP_ENV') !== 'testing') {
             return $totalSeconds / 3600;
+        } else {
+            return $totalSeconds;
         }
     }
 
@@ -143,7 +148,7 @@ class Project extends Model
      */
     public function getTotalCostQuotedAttribute()
     {
-        $total = $this->user->settings->hourly_rate * floor($this->total_seconds / 3600);
+        $total = $this->user->settings->hourly_rate * floor($this->getOriginal('total_seconds') / 3600);
         return $total;
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="sloped-section sloped-section--centered sloped-section--primary">
     <div class="sloped-section__container">
-        <h1>Project: {{$project->title}}</h1>
+        <h1>Project: {{$project->title}} <small><a href="{{route('projects.edit',$project)}}"><i class="fas fa-pencil-alt"></i></a></small></h1>
         <h2>Time Estimated: {{$project->time_estimated}}</h2>
         <div class="row">
             <div class="col-3">

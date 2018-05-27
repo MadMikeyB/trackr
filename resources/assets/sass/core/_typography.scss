@@ -61,6 +61,14 @@ em {
     font-style: italic;
 }
 
+small {
+    font-size: 1.3rem;
+}
+
+h1 > small {
+    font-size: 1.8rem;
+}
+
 ul:not(.menu) {
     margin: 0.75em 0;
     padding: 0 1em;
