@@ -535,6 +535,10 @@ ul:not(.menu).dark-bullets li:before {
   transition: all 0.2s ease-in-out;
 }
 
+.button--small {
+  padding: 0.75rem;
+}
+
 .button--primary {
   border: 2px solid #8D6A9F;
   color: #8D6A9F;
@@ -577,6 +581,12 @@ ul:not(.menu).dark-bullets li:before {
   background-color: #645775;
   border: 2px solid #645775;
   color: #FFF;
+}
+
+.button--block {
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .form__label {

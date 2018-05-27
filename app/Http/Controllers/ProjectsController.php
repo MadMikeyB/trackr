@@ -39,9 +39,8 @@ class ProjectsController extends Controller
         if (!auth()->user()->can('view', $project)) {
             return redirect()->route('home');
         }
-        
-        // @todo view
-        return $project;
+
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -51,7 +50,8 @@ class ProjectsController extends Controller
      */
     public function create()
     {
-        // @todo view
+        return view('projects.create');
+
     }
 
     /**
@@ -62,8 +62,9 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
+
         // @todo validation
-        $project = Project::create($request->all());
+        $project = auth()->user()->projects()->create($request->all());
 
         return redirect()->route('projects.edit', $project);
     }
@@ -79,7 +80,8 @@ class ProjectsController extends Controller
         if (!auth()->user()->can('update', $project)) {
             return redirect()->route('home');
         }
-        // @todo view
+
+        return view('projects.edit', compact('project'));
     }
 
     /**

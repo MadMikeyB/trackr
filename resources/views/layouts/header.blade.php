@@ -22,9 +22,9 @@
                 <ul class="menu menu__right">
                     @auth
                     <li class="menu__item">
-                        <span class="menu__link">
+                        <a href="{{route('home')}}" class="menu__link">
                             {{auth()->user()->name}}
-                        </span>
+                        </a>
                     </li>
                     <li class="menu__item">
                         <a href="{{route('user.settings.index')}}" class="menu__link">
