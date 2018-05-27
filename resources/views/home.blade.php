@@ -2,10 +2,12 @@
 
 @section('content')
 
-@if (session('status'))
-    {{ session('status') }}
-@endif
+<div class="section">
+    @if (session('status'))
+        {{ session('status') }}
+    @endif
 
-You are logged in!
+    You are logged in!
+</div>
 
 @endsection

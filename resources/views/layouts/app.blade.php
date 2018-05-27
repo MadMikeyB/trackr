@@ -22,7 +22,7 @@
 <body>
     @include('layouts.header')
     {{-- HACKY --}}
-    <div class="spacer" style="padding-bottom: 63px"></div>
+    <div class="spacer" style="padding-bottom: 85px"></div>
     <div id="app">
         @yield('content')
     </div>

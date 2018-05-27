@@ -579,6 +579,43 @@ ul:not(.menu).dark-bullets li:before {
   color: #FFF;
 }
 
+.form__label {
+  font-size: 1.5rem;
+  display: block;
+}
+
+.form__group {
+  float: left;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form__group--half {
+  width: 50%;
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid #EEEAFF;
+  padding: 1rem;
+  font-size: 1.4rem;
+}
+
+.form__input:hover,
+.form__input:focus {
+  border: 1px solid #8D6A9F;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.form__submit .button {
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
 .section {
   padding: 5rem;
   margin-bottom: 10rem;
