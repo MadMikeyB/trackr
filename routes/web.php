@@ -11,6 +11,7 @@
 |
 */
 
+// Static pages
 Route::view('/', 'welcome')->name('static.landing');
 Route::view('/terms', 'static.terms')->name('static.terms');
 Route::view('/privacy', 'static.privacy')->name('static.privacy');

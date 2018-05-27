@@ -97,4 +97,9 @@ class Project extends Model
     {
         return (100 - $this->percentage_taken);
     }
+
+    public function getCompletedMilestonesAttribute()
+    {
+        return $this->milestones()->whereNotNull('completed_at')->count();
+    }
 }

@@ -11,7 +11,11 @@
             </div>
             <div class="col-4">
                 <i class="fas fa-chart-line fa-3x"></i>
+                @if ($project->completed_milestones > 0)
+                <h3>Milestones: {{$project->completed_milestones}} / {{$project->milestones->count()}}</h3>
+                @else 
                 <h3>Milestones: {{$project->milestones->count()}}</h3>
+                @endif
             </div>
             <div class="col-4">
                 <i class="fas fa-clock fa-3x"></i>

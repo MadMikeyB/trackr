@@ -24,8 +24,7 @@ class ProjectsController extends Controller
     {
         $projects = auth()->user()->projects;
 
-        // @todo view
-        return $projects;
+        return view('home', compact('projects'));
     }
 
     /**

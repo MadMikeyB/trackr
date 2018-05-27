@@ -6,6 +6,7 @@ use App\User;
 use App\Project;
 use App\TimeLog;
 use Tests\TestCase;
+use App\ProjectMilestone;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -104,4 +105,23 @@ class ProjectTest extends TestCase
         // assert the relationship
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->project->milestones);
     }
+
+    public function test_it_can_tell_us_how_many_milestones_are_completed()
+    {
+        // Given we have milestones
+        $milestones = factory(ProjectMilestone::class, 2)->create([
+            'project_id' => $this->project->id, 
+            'user_id' => $this->user->id
+        ]);
+        // and completed milestones
+        $completedMilestones = factory(ProjectMilestone::class, 2)->create([
+            'project_id' => $this->project->id, 
+            'user_id' => $this->user->id,
+            'completed_at' => now()
+        ]);
+
+        // The project should be able to tell us how many completed milestones there are
+
+        $this->assertSame($this->project->completed_milestones, 2);
+    }   
 }

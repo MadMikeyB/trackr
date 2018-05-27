@@ -3,6 +3,18 @@
         <div class="navigation__container">
             <div class="navigation__left">
                 <ul class="menu menu__left">
+                    @auth
+                    <li class="menu__item">
+                        <a href="{{route('projects.index')}}" class="menu__link">
+                            My Projects
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="{{route('projects.create')}}" class="menu__link">
+                            Create Project
+                        </a>
+                    </li>
+                    @else
                     <li class="menu__item">
                         <a href="{{route('static.features')}}" class="menu__link">
                             Features
@@ -13,6 +25,7 @@
                             Pricing
                         </a>
                     </li>
+                    @endif
                 </ul>
             </div><!--
         --><div class="navigation__logo">
