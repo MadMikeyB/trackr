@@ -19,7 +19,7 @@ class EditUserSettingsTest extends TestCase
         // Who is signed in
         $this->signIn($user);
         // And they try to set their hourly rate
-        $settings = factory(UserSetting::class)->make(['hourly_rate' => 3500, 'user_id' => $user->id]);
+        $settings = factory(UserSetting::class)->make(['hourly_rate' => 35, 'user_id' => $user->id]);
         $response = $this->post(route('user.settings.store'), $settings->toArray());
         // The hourly rate should be persisted in the system
         $this->assertDatabaseHas('user_settings', $settings->toArray());

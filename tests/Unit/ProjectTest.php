@@ -6,6 +6,7 @@ use App\User;
 use App\Project;
 use App\TimeLog;
 use Tests\TestCase;
+use App\UserSetting;
 use App\ProjectMilestone;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -123,5 +124,31 @@ class ProjectTest extends TestCase
         // The project should be able to tell us how many completed milestones there are
 
         $this->assertSame($this->project->completed_milestones, 2);
-    }   
+    }
+
+    public function test_it_can_tell_you_how_much_it_is_worth()
+    {
+        // Given we have a user
+        $user = factory(User::class)->create();
+        // Who has set an hourly rate
+        $settings = factory(UserSetting::class)->create(['user_id' => $user->id, 'hourly_rate' => 35]);
+        // Given we have a project
+        $project = factory(Project::class)->create(['user_id' => $user->id, 'total_seconds' => 7200]);
+
+        // Get total Number of Seconds in Project
+        $totalSeconds = $project->total_seconds;
+        // Convert to hours
+        $hours = floor($totalSeconds / 3600);
+        // Multiply the users hourly rate by the number of hours to get total cost
+        $total = $user->settings->hourly_rate * $hours;
+
+        // They should be the same
+        $this->assertSame($total, $project->total_cost_quoted);
+    }
+
+    public function test_it_can_tell_you_the_total_time_estimated_in_a_human_readable_way()
+    {
+        $timeEstimated = timeDiffForHumans($this->project->total_seconds);
+        $this->assertSame($timeEstimated, $this->project->time_estimated);
+    }
 }

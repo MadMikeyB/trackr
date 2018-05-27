@@ -4,12 +4,17 @@
 <div class="sloped-section sloped-section--centered sloped-section--primary">
     <div class="sloped-section__container">
         <h1>Project: {{$project->title}}</h1>
+        <h2>Time Estimated: {{$project->time_estimated}}</h2>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <i class="far fa-clock fa-3x"></i>
                 <h3>Time Remaining: {{$project->percentage_remaining}}%</h3>
             </div>
-            <div class="col-4">
+            <div class="col-3">
+                <i class="fas fa-clock fa-3x"></i>
+                <h3>Time Taken: {{$project->percentage_taken}}%</h3>
+            </div>
+            <div class="col-3">
                 <i class="fas fa-chart-line fa-3x"></i>
                 @if ($project->completed_milestones > 0)
                 <h3>Milestones: {{$project->completed_milestones}} / {{$project->milestones->count()}}</h3>
@@ -17,9 +22,9 @@
                 <h3>Milestones: {{$project->milestones->count()}}</h3>
                 @endif
             </div>
-            <div class="col-4">
-                <i class="fas fa-clock fa-3x"></i>
-                <h3>Time Taken: {{$project->percentage_taken}}%</h3>
+            <div class="col-3">
+                <i class="fas fa-money-check-alt fa-3x"></i>
+                <h3>Value: {{number_format($project->total_cost_quoted)}}  {{$project->user->settings->currency}}</h3>
             </div>
         </div>
     </div>

@@ -19,8 +19,7 @@ class UserSettingsController extends Controller
      */
     public function index()
     {
-        // @todo view
-        return 'Settings';
+        return view('users.settings');
     }
 
     /**
@@ -32,8 +31,10 @@ class UserSettingsController extends Controller
     public function store(Request $request)
     {
         // @todo validation
-        
-        UserSetting::create($request->all());
+        $request->user()->settings->update([
+            'hourly_rate' => $request->hourly_rate,
+            'currency' => $request->currency
+        ]);
 
         return redirect()->route('user.settings.index');
     }

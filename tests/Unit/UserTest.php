@@ -58,4 +58,9 @@ class UserTest extends TestCase
         // The user should be able to tell us what milestones it has created
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->user->milestones);
     }
+
+    public function test_it_can_tell_us_about_its_settings()
+    {
+        $this->assertInstanceOf('App\UserSetting', $this->user->settings);
+    }
 }

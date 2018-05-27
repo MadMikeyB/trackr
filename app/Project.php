@@ -58,6 +58,14 @@ class Project extends Model
     }
 
     /**
+     * A project exposes how much time has been quoted
+     */
+    public function getTimeEstimatedAttribute()
+    {
+        return timeDiffForHumans($this->total_seconds);
+    }
+
+    /**
      * A project exposes how much time has been logged
      */
     public function getTimeLoggedAttribute()
@@ -98,8 +106,24 @@ class Project extends Model
         return (100 - $this->percentage_taken);
     }
 
+    /**
+     * A project exposes how many milestones were completed
+     * 
+     * @return float
+     */
     public function getCompletedMilestonesAttribute()
     {
         return $this->milestones()->whereNotNull('completed_at')->count();
+    }
+
+    /**
+     * A project exposes how much it is worth
+     * 
+     * @return float
+     */
+    public function getTotalCostQuotedAttribute()
+    {
+        $total = $this->user->settings->hourly_rate * floor($this->total_seconds / 3600);
+        return $total;
     }
 }

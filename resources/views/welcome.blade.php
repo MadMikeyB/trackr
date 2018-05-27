@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="sloped-section sloped-section--centered sloped-section--primary">
-    <h1>Your Money or Your Time?<br> Why not do both?</h1>
+    <h1>Your Money or Your Time?<br> Why not both?</h1>
     <h2><span class="u-logo-text-darker">my<span>track</span>r</span> allows you to efficiently track your time, giving you cost estimates for time spent.</h2>
     @auth
     <a href="{{ route('home')}}" class="button button--solid-secondary">Create Project</a>

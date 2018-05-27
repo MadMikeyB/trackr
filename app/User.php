@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Events\UserSaved;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -9,6 +10,15 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'saved' => UserSaved::class
+    ];
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -45,6 +55,16 @@ class User extends Authenticatable
     public function timelogs()
     {
         return $this->hasMany(TimeLog::class);
+    }
+
+    /**
+     * A user has many settings
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function settings()
+    {
+        return $this->hasOne(UserSetting::class);
     }
 
     /**

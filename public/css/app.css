@@ -432,6 +432,14 @@ ul:not(.menu).dark-bullets li:before {
   position: relative;
 }
 
+.fa,
+.fab,
+.fal,
+.far,
+.fas {
+  margin: 0.5rem 0;
+}
+
 .footer {
   margin-top: 10rem;
   width: 100%;

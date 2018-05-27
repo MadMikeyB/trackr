@@ -16,8 +16,8 @@ class CreateUserSettingsTable extends Migration
         Schema::create('user_settings', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id')->index();
-            $table->integer('hourly_rate');
-            $table->string('currency');
+            $table->integer('hourly_rate')->nullable();
+            $table->string('currency')->nullable();
             $table->softDeletes();
             $table->timestamps();
 
