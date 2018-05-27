@@ -18,11 +18,13 @@
 
 <style>
     .stopwatch {
-        font-size: 7rem;
+        font-size: 5rem;
         text-align: center;
         margin: 0 auto;
         width: 100%;
         display: block;
+        font-family: "Fluid Lighter", sans-serif;
+        color: #8D6A9F;
     }
 </style>
 

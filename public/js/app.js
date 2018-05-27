@@ -13431,7 +13431,7 @@ exports = module.exports = __webpack_require__(40)(false);
 
 
 // module
-exports.push([module.i, "\n.stopwatch {\n    font-size: 7rem;\n    text-align: center;\n    margin: 0 auto;\n    width: 100%;\n    display: block;\n}\n", ""]);
+exports.push([module.i, "\n.stopwatch {\n    font-size: 5rem;\n    text-align: center;\n    margin: 0 auto;\n    width: 100%;\n    display: block;\n    font-family: \"Fluid Lighter\", sans-serif;\n    color: #8D6A9F;\n}\n", ""]);
 
 // exports
 
@@ -13703,6 +13703,8 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //

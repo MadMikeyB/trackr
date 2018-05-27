@@ -1,0 +1,21 @@
+.timelogs {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    &__item {
+        display: block;
+        background-color: white;
+        padding: 1rem;
+        margin: 1rem 0;
+        box-shadow: 0 2px 4px rgba($primary, 0.2);
+
+        i {
+            color: $primary;
+            margin-right: 1rem;
+        }
+
+        &:before {
+            display: none !important;
+        }
+    }
+}

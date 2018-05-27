@@ -3,7 +3,21 @@
 @section('content')
 <div class="sloped-section sloped-section--centered sloped-section--primary">
     <div class="sloped-section__container">
-        <h1>Project: {{$project->title}} <small><a href="{{route('projects.edit',$project)}}"><i class="fas fa-pencil-alt"></i></a></small></h1>
+        <h1>
+            Project: {{$project->title}} 
+            <small>
+                <a href="{{route('projects.edit', $project)}}">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+                <a href="{{route('projects.destroy', $project)}}" onclick="event.preventDefault(); document.getElementById('delete-project-{{$project->id}}').submit();">
+                    <i class="fas fa-times"></i>
+                </a>
+                <form id="delete-project-{{$project->id}}" action="{{ route('projects.destroy', $project) }}" method="POST" style="display: none;">
+                    @csrf
+                    @method('DELETE')
+                </form>
+            </small>
+        </h1>
         <h2>Time Estimated: {{$project->time_estimated}}</h2>
         <div class="row">
             <div class="col-3">
@@ -36,18 +50,21 @@
         <div class="row">
             <div class="col-8">
                 <h1><i class="fas fa-user-clock"></i> Time Logs</h1>
+                <p>
+                    <stopwatch :project="{{$project}}"></stopwatch>
+                </p>
                 @unless ($project->timelogs->isEmpty())
-                <ul>
+                <ul class="timelogs">
                     @foreach ($project->timelogs as $timelog)
-                        <li>{{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('jS F Y \a\t H:i:s') }}</li>
+                        <li class="timelogs__item">
+                            <i class="fas fa-clock"></i>
+                            {{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('jS F Y \a\t H:i:s') }}
+                        </li>
                     @endforeach
                 </ul>
                 @else
                     <p>No time logs have been created!</p>
                 @endunless
-                <p>
-                    <stopwatch :project="{{$project}}"></stopwatch>
-                </p>
             </div>
             <!-- Milestones -->
             <div class="col-4">

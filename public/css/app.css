@@ -843,3 +843,26 @@ ul:not(.menu).dark-bullets li:before {
   text-align: center;
 }
 
+.timelogs {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.timelogs__item {
+  display: block;
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  -webkit-box-shadow: 0 2px 4px rgba(141, 106, 159, 0.2);
+          box-shadow: 0 2px 4px rgba(141, 106, 159, 0.2);
+}
+
+.timelogs__item i {
+  color: #8D6A9F;
+  margin-right: 1rem;
+}
+
+.timelogs__item:before {
+  display: none !important;
+}
+
