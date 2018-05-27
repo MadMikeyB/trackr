@@ -35,12 +35,12 @@
                 </ul>
                 @else
                     <p>No time logs have been created!</p>
-                    <p>
-                        <a href="" class="button button--block button--solid-primary">
-                            Log Time
-                        </a>
-                    </p>
                 @endunless
+                <p>
+                    <a href="" class="button button--block button--solid-primary">
+                        Log Time
+                    </a>
+                </p>
             </div>
             <!-- Milestones -->
             <div class="col-4">
@@ -53,17 +53,32 @@
                                     <i class="fas fa-check"></i> 
                                 @endif 
                                 {{$milestone->title}}
+                                <div class="u-pull-right">
+{{--                                     <a href="{{route('milestones.edit', [$project, $milestone])}}" class="u-padding">
+                                        <i class="fas fa-check"></i>
+                                    </a> --}}
+                                    <a href="{{route('milestones.edit', [$project, $milestone])}}" class="u-padding">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-milestone-{{$milestone->id}}').submit();" class="u-padding">
+                                        <i class="fas fa-times"></i>
+                                    </a>
+                                    <form id="delete-milestone-{{$milestone->id}}" action="{{ route('milestones.destroy', [$project, $milestone]) }}" method="POST" style="display: none;">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+                                </div>
                             </li>
                         @endforeach
                     </ul>
                 @else
                     <p>No milestones have been created!</p>
-                    <p>
-                        <a href="{{route('milestones.create', $project)}}" class="button button--small button--secondary">
-                            Create Milestone
-                        </a>
-                    </p>
                 @endunless
+                <p>
+                    <a href="{{route('milestones.create', $project)}}" class="button button--small button--secondary">
+                        Create Milestone
+                    </a>
+                </p>
             </div>
             <!-- / Milestones -->
         </div>

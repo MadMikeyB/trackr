@@ -21,8 +21,14 @@ class EditProjectMilestonesTest extends TestCase
         $this->signIn($user);
         // Who has a project
         $project = factory(Project::class)->create(['user_id' => $user->id]);
+        // Which has a milestone
+        $milestone = factory(ProjectMilestone::class)->create([
+            'project_id' => $project->id, 
+            'user_id' => $user->id, 
+            'title' => 'Hit 50%'
+        ]);
         // Who attempts to view the edit screen
-        $response = $this->get(route('milestones.edit', $project));
+        $response = $this->get(route('milestones.edit', [$project, $milestone]));
         // They should be allowed
         $response->assertStatus(200);
     }
@@ -36,8 +42,14 @@ class EditProjectMilestonesTest extends TestCase
         // Who has a project
         $anotherUser = factory(User::class)->create();
         $project = factory(Project::class)->create(['user_id' => $anotherUser->id]);
+        // Which has a milestone
+        $milestone = factory(ProjectMilestone::class)->create([
+            'project_id' => $project->id, 
+            'user_id' => $user->id, 
+            'title' => 'Hit 50%'
+        ]);
         // Who attempts to view the edit screen
-        $response = $this->get(route('milestones.edit', $project));
+        $response = $this->get(route('milestones.edit', [$project, $milestone]));
         // They should be allowed
         $response->assertStatus(302)->assertRedirect(route('home'));
     }
@@ -48,8 +60,14 @@ class EditProjectMilestonesTest extends TestCase
         $user = factory(User::class)->create();
         // Who has a project
         $project = factory(Project::class)->create(['user_id' => $user->id]);
+        // Which has a milestone
+        $milestone = factory(ProjectMilestone::class)->create([
+            'project_id' => $project->id, 
+            'user_id' => $user->id, 
+            'title' => 'Hit 50%'
+        ]);
         // Who attempts to view the edit screen
-        $response = $this->get(route('milestones.edit', $project));
+        $response = $this->get(route('milestones.edit', [$project, $milestone]));
         // They should be allowed
         $response->assertStatus(302)->assertRedirect(route('login'));
     }

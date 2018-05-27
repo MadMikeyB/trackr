@@ -31,6 +31,6 @@ Route::post('/settings', 'UserSettingsController@store')->name('user.settings.st
 
 Route::post('/milestones/{project}', 'ProjectMilestoneController@store')->name('milestones.store');
 Route::get('/milestones/{project}/create', 'ProjectMilestoneController@create')->name('milestones.create');
-Route::get('/milestones/{project}/edit', 'ProjectMilestoneController@edit')->name('milestones.edit');
+Route::get('/milestones/{project}/{milestone}/edit', 'ProjectMilestoneController@edit')->name('milestones.edit');
 Route::patch('/milestones/{project}/{milestone}', 'ProjectMilestoneController@update')->name('milestones.update');
 Route::delete('/milestones/{project}/{milestone}', 'ProjectMilestoneController@destroy')->name('milestones.destroy');

@@ -33,7 +33,7 @@ class DeleteProjectMilestonesTest extends TestCase
         // Their project should be missing from the database
         $this->assertSoftDeleted('project_milestones', $milestone->toArray());
         // and they should be redirected to the projects page
-        $response->assertStatus(302)->assertRedirect(route('projects.index'));
+        $response->assertStatus(302)->assertRedirect(route('projects.show', $project));
     }
 
     public function test_an_authenticated_user_cannot_delete_other_peoples_project_milestones()

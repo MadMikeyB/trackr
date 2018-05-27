@@ -24,8 +24,7 @@ class ProjectMilestoneController extends Controller
             return redirect()->route('home');
         }
 
-        // @todo view
-        return $project;
+        return view('projects.milestones.create', compact('project'));
     }
 
     /**
@@ -38,7 +37,11 @@ class ProjectMilestoneController extends Controller
     {
         // @todo validation
 
-        $project->milestones()->create($request->all());
+        $project->milestones()->create([
+            'title' => $request->title,
+            'user_id' => $request->user()->id ?? auth()->id(),
+            'completed_at' => ((bool)$request->completed == true) ? now() : null
+        ]);
 
         return redirect()->route('projects.show', $project);
     }
@@ -48,15 +51,15 @@ class ProjectMilestoneController extends Controller
      * 
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
-     * @return ???
+     * @return Illuminate\Http\Response
      */
-    public function edit(Request $request, Project $project)
+    public function edit(Request $request, Project $project, ProjectMilestone $milestone)
     {
         if (!auth()->user()->can('update', $project)) {
             return redirect()->route('home');
         }
 
-        // @todo view
+        return view('projects.milestones.edit', compact('project', 'milestone'));
     }
 
     /**
@@ -72,9 +75,13 @@ class ProjectMilestoneController extends Controller
         if (!auth()->user()->can('update', $project)) {
             return redirect()->route('home');
         }
+
         // @todo validation
         
-        $milestone->update($request->all());
+        $milestone->update([
+            'title' => $request->title,
+            'completed_at' => ((bool)$request->completed == true) ? now() : null
+        ]);
 
         return redirect()->route('projects.show', $project);
     }
@@ -94,6 +101,6 @@ class ProjectMilestoneController extends Controller
 
         $milestone->delete();
 
-        return redirect()->route('projects.index'); 
+        return redirect()->route('projects.show', $project); 
     }
 }
