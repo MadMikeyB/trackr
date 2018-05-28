@@ -25,7 +25,7 @@
                             Pricing
                         </a>
                     </li>
-                    @endif
+                    @endauth
                 </ul>
             </div><!--
         --><div class="navigation__logo">
@@ -68,32 +68,73 @@
             </div>
         </div>
     </nav>
+
     <div class="menu__hamburger">
         <i class="fas fa-bars"></i>
         <i class="fas fa-times"></i>
     </div>
+
     <nav class="mobile-nav">
         <ul class="mobile-menu">
             <li class="mobile-menu__item">
-                <a href="" class="mobile-menu__link">
-                    Link
+                <a href="{{route('static.landing')}}" class="mobile-menu__link">
+                    Home
+                </a>
+            </li>
+            @auth
+            <li class="mobile-menu__item">
+                <a href="{{route('projects.index')}}" class="mobile-menu__link">
+                    My Projects
                 </a>
             </li>
             <li class="mobile-menu__item">
-                <a href="" class="mobile-menu__link">
-                    Link
+                <a href="{{route('projects.create')}}" class="mobile-menu__link">
+                    Create Project
+                </a>
+            </li>
+            @else
+            <li class="mobile-menu__item">
+                <a href="{{route('static.features')}}" class="mobile-menu__link">
+                    Features
                 </a>
             </li>
             <li class="mobile-menu__item">
-                <a href="" class="mobile-menu__link">
-                    Link
+                <a href="{{route('static.pricing')}}" class="mobile-menu__link">
+                    Pricing
+                </a>
+            </li>
+            @endauth
+            @auth
+            <li class="mobile-menu__item">
+                <a href="{{route('home')}}" class="mobile-menu__link">
+                    {{auth()->user()->name}}
                 </a>
             </li>
             <li class="mobile-menu__item">
-                <a href="" class="mobile-menu__link">
-                    Link
+                <a href="{{route('user.settings.index')}}" class="mobile-menu__link">
+                    Settings
                 </a>
             </li>
+            <li class="mobile-menu__item">
+                <a href="{{ route('logout') }}" class="mobile-menu__link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Sign Out
+                </a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
+            @else
+            <li class="mobile-menu__item">
+                <a href="{{route('register')}}" class="mobile-menu__link">
+                    Sign Up
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a href="{{route('login')}}" class="mobile-menu__link">
+                    Sign In
+                </a>
+            </li>
+            @endauth
         </ul>
     </nav>
 </header>
