@@ -794,6 +794,10 @@ ul:not(.menu).dark-bullets li:before {
   transition: all 0.2s ease-in-out;
 }
 
+.button + .button {
+  margin: 0 1rem;
+}
+
 .button--small {
   padding: 0.75rem;
 }
