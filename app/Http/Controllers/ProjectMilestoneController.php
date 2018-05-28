@@ -35,7 +35,9 @@ class ProjectMilestoneController extends Controller
      */
     public function store(Request $request, Project $project)
     {
-        // @todo validation
+        $request->validate([
+            'title' => 'required'
+        ]);
 
         $project->milestones()->create([
             'title' => $request->title,
@@ -68,7 +70,7 @@ class ProjectMilestoneController extends Controller
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
      * @param App\ProjectMilestone $milestone
-     * @return ???
+     * @return Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Project $project, ProjectMilestone $milestone)
     {
@@ -76,11 +78,34 @@ class ProjectMilestoneController extends Controller
             return redirect()->route('home');
         }
 
-        // @todo validation
+        $request->validate([
+            'title' => 'required'
+        ]);
         
         $milestone->update([
             'title' => $request->title,
             'completed_at' => ((bool)$request->completed == true) ? now() : null
+        ]);
+
+        return redirect()->route('projects.show', $project);
+    }
+
+    /**
+     * Complete project milestone
+     * 
+     * @param Illuminate\Http\Request $request
+     * @param App\Project $project
+     * @param App\ProjectMilestone $milestone
+     * @return Illuminate\Http\RedirectResponse
+     */
+    public function complete(Request $request, Project $project, ProjectMilestone $milestone)
+    {
+        if (!auth()->user()->can('update', $project)) {
+            return redirect()->route('home');
+        }
+
+        $milestone->update([
+            'completed_at' => now()
         ]);
 
         return redirect()->route('projects.show', $project);

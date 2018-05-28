@@ -73,9 +73,11 @@
                                 @endif 
                                 {{$milestone->title}}
                                 <div class="u-pull-right">
-{{--                                     <a href="{{route('milestones.edit', [$project, $milestone])}}" class="u-padding">
+                                    @if (is_null($milestone->completed_at))
+                                    <a href="{{route('milestones.complete', [$project, $milestone])}}" class="u-padding">
                                         <i class="fas fa-check"></i>
-                                    </a> --}}
+                                    </a>
+                                    @endif
                                     <a href="{{route('milestones.edit', [$project, $milestone])}}" class="u-padding">
                                         <i class="fas fa-pencil-alt"></i>
                                     </a>
