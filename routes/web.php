@@ -37,3 +37,7 @@ Route::get('/milestones/{project}/{milestone}/edit', 'ProjectMilestoneController
 Route::get('/milestones/{project}/{milestone}/complete', 'ProjectMilestoneController@complete')->name('milestones.complete');
 Route::patch('/milestones/{project}/{milestone}', 'ProjectMilestoneController@update')->name('milestones.update');
 Route::delete('/milestones/{project}/{milestone}', 'ProjectMilestoneController@destroy')->name('milestones.destroy');
+
+Route::get('error', function() {
+    throw new \Exception();
+});
