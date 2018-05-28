@@ -841,6 +841,12 @@ ul:not(.menu).dark-bullets li:before {
   margin: 0 1rem;
 }
 
+@media all and (max-width: 769px) {
+  .button + .button {
+    margin: 1rem;
+  }
+}
+
 .button--small {
   padding: 0.75rem;
 }
