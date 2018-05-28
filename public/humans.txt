@@ -1,0 +1,48 @@
+The humans.txt file explains the team, technology,
+and graphic assets behind this site.
+
+_______________________________________________________________________________
+
+This website is an Imperfect Production
+
+Michael Burton
+Role: Design and Web Development
+Website: https://mikeylicio.us
+Twitter: @MadMikeyB
+
+Daniel King
+Role: Logo Design and Design Inspiration
+Website: https://www.dannyking.co.uk/
+Twitter: @FileTrekker
+
+_______________________________________________________________________________
+
+SPECIAL THANKS
+
+LaravelUK Slack Team
+
+_______________________________________________________________________________
+
+TECHNOLOGY
+
+Laravel - PHP Framework
+https://laravel.com
+
+SCSS - CSS pre-processor
+https://sass-lang.com/
+
+VueJS
+https://vuejs.org
+
+Github - Code collaboration
+github.com
+
+JS libraries include:
+VueJS
+
+_______________________________________________________________________________
+
+FONTS
+
+Google Fonts
+fonts.google.com
