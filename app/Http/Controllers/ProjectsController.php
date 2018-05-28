@@ -45,7 +45,7 @@ class ProjectsController extends Controller
     /**
      * Display the create project form
      * 
-     * @return ???
+     * @return Illuminate\Http\Response
      */
     public function create()
     {
@@ -61,6 +61,11 @@ class ProjectsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required|min:4',
+            'total_seconds' => 'required|integer'
+        ]);
 
         // @todo validation
         $project = auth()->user()->projects()->create($request->all());
