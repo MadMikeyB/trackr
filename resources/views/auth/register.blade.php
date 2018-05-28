@@ -47,6 +47,15 @@
                 <input id="password-confirm" type="password" class="form__input" name="password_confirmation" required>
             </div>
 
+            <div class="form__group">
+                <div class="checkbox">
+                    <p>The information we collect is solely to provide you with the services which you have requested of us and administer your account. Your information is not shared with any third parties.</p>
+                    <label for="gdpr">
+                        <input type="checkbox" id="gdpr" name="gdpr" required> I have read and agree to the <a href="{{route('static.privacy')}}">Privacy Policy</a> and <a href="{{route('static.terms')}}">Terms &amp; Conditions</a>
+                    </label>
+                </div>
+            </div>
+
             <div class="form__group form__submit">
                 <button type="submit" class="button button--solid-primary">
                     {{ __('Register') }}

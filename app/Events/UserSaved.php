@@ -22,6 +22,8 @@ class UserSaved
     {
         UserSetting::firstOrCreate([
            'user_id' => $user->id,
+           'hourly_rate' => 0,
+           'currency' => 'GBP',
         ]);
     }
 }
