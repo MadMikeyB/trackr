@@ -31,7 +31,7 @@ class UserSettingsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'hourly_rate' => 'required|integer|min:0'
+            'hourly_rate' => 'integer|min:0'
         ]);
 
         $request->user()->settings->update([

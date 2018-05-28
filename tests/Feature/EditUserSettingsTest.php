@@ -14,6 +14,7 @@ class EditUserSettingsTest extends TestCase
 
     public function test_an_authenticated_user_can_set_their_hourly_rate()
     {
+        $this->withoutExceptionHandling();
         // Given we have a user
         $user = factory(User::class)->create();
         // Who is signed in
