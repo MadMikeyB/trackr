@@ -67,19 +67,24 @@
 </div>
 
 <div class="section section--centered">
-    <h1>Get In Touch</h1>
-    <div class="row">
-        <div class="col-4">
-            <h2>Email</h2>
-            <a href="mailto:me@mikeylicio.us">me@mikeylicio.us</a>
-        </div>
-        <div class="col-4">
-            <h2>Twitter</h2>
-            <a href="https://www.twitter.com/madmikeyb">@madmikeyb</a>
-        </div>
-        <div class="col-4">
-            <h2>Slack</h2>
-            <a href="https://laravelphp.uk/login/slack">LaravelUK</a>
+    <div class="section__container">
+        <h1>Get In Touch</h1>
+        <div class="row">
+            <div class="col-4">
+                <h3 class="u-icon"><i class="fas fa-envelope fa-2x"></i></h3>
+                <h2>Email</h2>
+                <a href="mailto:me@mikeylicio.us" class="u-font-weight-500">me[at]mikeylicio.us</a>
+            </div>
+            <div class="col-4">
+                <h3 class="u-icon"><i class="fab fa-twitter fa-2x"></i></h3>
+                <h2>Twitter</h2>
+                <a href="https://www.twitter.com/madmikeyb" class="u-font-weight-500">@madmikeyb</a>
+            </div>
+            <div class="col-4">
+                <h3 class="u-icon"><i class="fab fa-slack fa-2x"></i></h3>
+                <h2>Slack</h2>
+                <a href="https://laravelphp.uk/login/slack" class="u-font-weight-500">LaravelUK</a>
+            </div>
         </div>
     </div>
 </div>

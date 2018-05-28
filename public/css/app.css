@@ -215,6 +215,22 @@ table {
   font-size: 1.8rem;
 }
 
+.u-font-weight-300 {
+  font-weight: 300;
+}
+
+.u-font-weight-400 {
+  font-weight: 400;
+}
+
+.u-font-weight-500 {
+  font-weight: 500;
+}
+
+.u-icon {
+  color: #8D6A9F;
+}
+
 *,
 *:after,
 *:before {
@@ -493,7 +509,7 @@ ul:not(.menu).dark-bullets li:before {
 }
 
 .footer {
-  margin-top: 10rem;
+  margin-top: 2rem;
   width: 100%;
   background-color: #1C2A3A;
   padding: 1.5rem;
@@ -516,6 +532,13 @@ ul:not(.menu).dark-bullets li:before {
   width: 33.33%;
 }
 
+@media all and (max-width: 769px) {
+  .footer__right {
+    text-align: center;
+    width: 100%;
+  }
+}
+
 .footer__left {
   display: inline-block;
   text-align: left;
@@ -523,11 +546,25 @@ ul:not(.menu).dark-bullets li:before {
   width: 33.33%;
 }
 
+@media all and (max-width: 769px) {
+  .footer__left {
+    text-align: center;
+    width: 100%;
+  }
+}
+
 .footer__center {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
   width: 33.33%;
+}
+
+@media all and (max-width: 769px) {
+  .footer__center {
+    text-align: center;
+    width: 100%;
+  }
 }
 
 .header {
@@ -939,6 +976,10 @@ ul:not(.menu).dark-bullets li:before {
 
 .section--slim {
   padding: 2.5rem;
+}
+
+.section:last-of-type {
+  margin-bottom: 2rem;
 }
 
 .sloped-section {

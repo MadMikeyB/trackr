@@ -19,4 +19,8 @@
     &--slim {
         padding: 2.5rem;
     }
+
+    &:last-of-type {
+        margin-bottom: 2rem;
+    }
 }
