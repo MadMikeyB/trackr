@@ -66,6 +66,34 @@
                     @endauth
                 </ul>
             </div>
-        </nav>
         </div>
+    </nav>
+    <div class="menu__hamburger">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+    </div>
+    <nav class="mobile-nav">
+        <ul class="mobile-menu">
+            <li class="mobile-menu__item">
+                <a href="" class="mobile-menu__link">
+                    Link
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a href="" class="mobile-menu__link">
+                    Link
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a href="" class="mobile-menu__link">
+                    Link
+                </a>
+            </li>
+            <li class="mobile-menu__item">
+                <a href="" class="mobile-menu__link">
+                    Link
+                </a>
+            </li>
+        </ul>
+    </nav>
 </header>

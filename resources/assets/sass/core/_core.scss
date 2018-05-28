@@ -23,6 +23,10 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+
+    &.js-mobile-nav-active {
+        overflow: hidden;
+    }
 }
 
 #app {

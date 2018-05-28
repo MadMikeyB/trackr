@@ -20,3 +20,17 @@ Vue.component('stopwatch', require('./components/Stopwatch.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+/**
+ * Dead simple mobile menu
+ */
+let hamburger = document.querySelector(".menu__hamburger");
+let mobileNav = document.querySelector(".mobile-menu");
+let body = document.querySelector("body");
+
+hamburger.addEventListener('click', function() {
+  mobileNav.classList.toggle("mobile-menu--active");
+  hamburger.classList.toggle("menu__hamburger--active");
+  body.classList.toggle("js-mobile-nav-active");
+}, false);
+

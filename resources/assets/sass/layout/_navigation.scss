@@ -1,8 +1,14 @@
 .navigation {
+    position: relative;
+
     &__left {
         display: inline-block;
         vertical-align: middle;
-        width: 20%;
+        width: 33.33%;
+
+        @media all and (max-width: $tablet) {
+            display: none;
+        }
     }
 
     &__logo {
@@ -14,7 +20,11 @@
         text-align: center;
         text-transform: lowercase;
         vertical-align: middle;
-        width: 60%;
+        width: 33.33%;
+
+        @media all and (max-width: $tablet) {
+            width: 100%;
+        }
 
         span {
             color: $white;
@@ -27,7 +37,11 @@
     }
 
     &__right {
-        width: 20%;
+        @media all and (max-width: $tablet) {
+            display: none;
+        }
+
+        width: 33.33%;
         display: inline-block;
         vertical-align: middle;
     }
@@ -36,6 +50,10 @@
 .menu {
     list-style: none;
     float: left;
+
+    @media all and (max-width: $tablet) {
+        display: none;
+    }
 
     &__left {
         text-align: right;
@@ -64,5 +82,92 @@
         }
 
         &:hover {}
+
+        @media all and (max-width: $laptop) {
+            padding: 0.5rem;
+            font-size: 1.3rem;
+        }
+    }
+
+    &__hamburger {
+        @media all and (min-width: $tablet) {
+            display: none;
+        }
+
+        .fa-times {
+            display: none;
+        }
+
+        &--active {
+            .fa-times {
+                display: block;
+            }
+
+            .fa-bars {
+                display: none;
+            }
+        }
+
+        display: block;
+        float: right;
+        color: $white;
+        font-size: 4rem;
+        position: absolute;
+        top: 1rem;
+        right: 2rem;
+
+        @media all and (max-width: $phone) {
+            top: 2rem;
+            font-size: 3rem;
+        }
+    }
+}
+
+.mobile-menu {
+    display: block;
+    background-color: $offblack;
+    left: -100%;
+    margin: 0 !important;
+    min-height: 100vh;
+    padding: 0 !important;
+    position: absolute;
+    top: 85px;
+    width: 100%;
+    transition: all 0.15s ease-in-out;
+
+    &--active {
+        left: 0;
+    }
+
+    @media all and (min-width: $tablet) {
+        display: none;
+    }
+
+    &__item {
+        display: block;
+        text-align: center;
+
+        &:before {
+            display: none !important;
+        }
+
+        @media all and (min-width: $tablet) {
+            display: none;
+        }
+    }
+
+    &__link {
+        color: $white;
+        background-color: $offblack;
+        display: block;
+        font-weight: 400;
+        padding: 1rem;
+        text-decoration: none;
+        width: 100%;
+        border-bottom: 1px solid rgba($primary, 0.4);
+
+        @media all and (min-width: $tablet) {
+            display: none;
+        }
     }
 }
