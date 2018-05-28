@@ -30,7 +30,10 @@ class UserSettingsController extends Controller
      */
     public function store(Request $request)
     {
-        // @todo validation
+        $request->validate([
+            'hourly_rate' => 'required|integer|min:0'
+        ]);
+
         $request->user()->settings->update([
             'hourly_rate' => $request->hourly_rate,
             'currency' => $request->currency
