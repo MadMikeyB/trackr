@@ -20,14 +20,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
 <body>
-    @include('layouts.header')
-    {{-- HACKY --}}
-    <div class="spacer" style="padding-bottom: 85px"></div>
     <div id="app">
+        <header class="header--slim">
+            <span class="u-logo-text">my<span>track</span>r</span>
+        </header>
+
         @yield('content')
     </div>
-    
-    @include('layouts.footer')
     @stack('scripts-after')
 </body>
 </html>

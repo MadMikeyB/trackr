@@ -59,7 +59,7 @@
 
         <div class="row">
             <div class="col-8">
-                <h1><i class="fas fa-user-clock"></i> Time Logs</h1>
+                <h1><i class="fas fa-user-clock"></i> Time Logs <small><a onclick="openTimeLogsWindow()"><i class="fas fa-external-link-alt"></i></small></a></h1>
                 <p>
                     <stopwatch :project="{{$project}}"></stopwatch>
                 </p>
@@ -115,8 +115,15 @@
                 </p>
             </div>
             <!-- / Milestones -->
-        </div>
-        
+        </div>  
     </div>
 </div>
+@push('scripts-after')
+<script>
+function openTimeLogsWindow() {
+    var myWindow = window.open("{{route('projects.timelogs.show', $project)}}", "mytrackr timer", "location=0,status=0,scrollbars=1,width=800,height=600");
+}
+</script>
+
+@endpush
 @endsection

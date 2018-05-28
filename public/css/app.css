@@ -540,6 +540,12 @@ ul:not(.menu).dark-bullets li:before {
   z-index: 2;
 }
 
+.header--slim {
+  background-color: #1C2A3A;
+  text-align: center;
+  padding: 1rem 0;
+}
+
 .navigation {
   position: relative;
 }
@@ -929,6 +935,10 @@ ul:not(.menu).dark-bullets li:before {
 
 .section--centered {
   text-align: center;
+}
+
+.section--slim {
+  padding: 2.5rem;
 }
 
 .sloped-section {

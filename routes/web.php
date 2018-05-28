@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/projects/{project}/timelog', 'TimelogController@show')->name('projects.timelogs.show');
 Route::resource('projects', 'ProjectsController');
 
 // API route model binding not working

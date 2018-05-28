@@ -6,4 +6,10 @@
     background-color: $offblack;
     padding: 1rem 0;
     z-index: 2;
+
+    &--slim {
+        background-color: $offblack;
+        text-align: center;
+        padding: 1rem 0;
+    }
 }
