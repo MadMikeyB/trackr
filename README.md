@@ -4,11 +4,15 @@
 
 # Introduction
 
+This is the repository for the application at [https://mytrackr.app](https://mytrackr.app).
+
 mytrackr allows you to efficiently track your time, set up projects, hourly rates cost estimates, milestones and much more. 
 
 The application was built over the course of a weekend for [Larahack](https://larahack.com).
 
-This is the repository for the application at [https://mytrackr.app](https://mytrackr.app).
+## Vote on Larahack!!
+
+Check it out on [Larahack](https://larahack.com/project/12) and vote for mytrackr to win! :)
 
 # Features / User Story
 
