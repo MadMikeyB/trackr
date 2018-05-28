@@ -49,7 +49,7 @@
             },
             stopTime() {
                 clearInterval(this.timer)
-                axios.post('/api/logtime/'+this.project.id, {
+                axios.post('/api/logtime/'+this.project.slug, {
                     'number_of_seconds': this.totalSeconds
                 }).then(({data}) => {
                     // reset

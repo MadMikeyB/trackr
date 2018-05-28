@@ -30656,7 +30656,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             clearInterval(this.timer);
-            axios.post('/api/logtime/' + this.project.id, {
+            axios.post('/api/logtime/' + this.project.slug, {
                 'number_of_seconds': this.totalSeconds
             }).then(function (_ref) {
                 var data = _ref.data;
@@ -30860,7 +30860,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         openTimeLogsWindow: function openTimeLogsWindow() {
-            window.open("/projects/" + this.project.id + "/timelog", "mytrackr timer", "location=0,status=0,scrollbars=1,width=800,height=600");
+            window.open("/projects/" + this.project.slug + "/timelog", "mytrackr timer", "location=0,status=0,scrollbars=1,width=800,height=600");
         },
         timeLogUpdated: function timeLogUpdated(timelog) {
             this.timelogs.unshift(timelog);

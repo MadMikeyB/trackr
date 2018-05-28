@@ -3,19 +3,42 @@
 namespace App;
 
 use App\TimeLog;
-use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Project extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, Sluggable;
 
     /* @var $fillable The fields which are mass assignable */
     protected $fillable = ['title', 'description', 'user_id', 'total_seconds'];
 
     /* @var $with The relationships which we'll always load */
     public $with = ['timelogs'];
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
+
+    /**
+     * Set the route key name for the Project Model
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     /**
      * A project exposes it's URL

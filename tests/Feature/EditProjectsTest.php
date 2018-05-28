@@ -59,7 +59,7 @@ class EditProjectsTest extends TestCase
         // Who has a project
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // When they try to update their project
-        $updatedProject = factory(Project::class)->make(['user_id' => $user->id]);
+        $updatedProject = factory(Project::class)->make(['title' => 'My New Probject', 'slug' => $project->slug, 'user_id' => $user->id]);
         $response = $this->patch(route('projects.update', $project), $updatedProject->toArray());
         // It should be persisted in the database
         $this->assertDatabaseHas('projects', $updatedProject->toArray());

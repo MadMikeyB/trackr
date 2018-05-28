@@ -40,7 +40,7 @@
         },
         methods: {
             openTimeLogsWindow() {
-                window.open("/projects/"+this.project.id+"/timelog", "mytrackr timer", "location=0,status=0,scrollbars=1,width=800,height=600");
+                window.open("/projects/"+this.project.slug+"/timelog", "mytrackr timer", "location=0,status=0,scrollbars=1,width=800,height=600");
             },
             timeLogUpdated(timelog) {
                 this.timelogs.unshift(timelog)

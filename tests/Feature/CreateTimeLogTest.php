@@ -27,6 +27,7 @@ class CreateTimeLogTest extends TestCase
             'user_id' => $user->id, 
             'project_id' => $project->id
         ]);
+        $timelog->setAppends([]);
         // when the time is logged
         $response = $this->json('POST', route('api.timelog.store', $project->fresh()), $timelog->toArray());
         // it should be persisted in the database
