@@ -18,7 +18,7 @@
         width: 100%;
         border: 1px solid $offwhite;
         padding: 1rem;
-        font-size: 1.4rem;
+        font: $fontweight $fontsize $fontfamily;
 
         &:hover, &:focus {
             border: 1px solid $primary;

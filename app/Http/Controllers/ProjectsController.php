@@ -64,7 +64,7 @@ class ProjectsController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required|min:4',
-            'total_seconds' => 'required|integer'
+            'total_seconds' => 'required|integer|min:0'
         ]);
 
         // @todo validation
@@ -101,7 +101,11 @@ class ProjectsController extends Controller
             return redirect()->route('home');
         }
 
-        // @todo validation
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required|min:4',
+            'total_seconds' => 'required|integer|min:0'
+        ]);
 
         $project->update($request->all());
 
