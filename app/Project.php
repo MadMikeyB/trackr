@@ -34,7 +34,7 @@ class Project extends Model
      */
     public function timelogs()
     {
-        return $this->hasMany(TimeLog::class);
+        return $this->hasMany(TimeLog::class)->latest('created_at');
     }
 
     /**

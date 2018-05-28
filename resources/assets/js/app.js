@@ -14,8 +14,10 @@ window.Vue = require('vue');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.use(require('vue-moment'));
 
 Vue.component('stopwatch', require('./components/Stopwatch.vue'));
+Vue.component('time-log-list', require('./components/TimeLogList.vue'));
 
 const app = new Vue({
     el: '#app'

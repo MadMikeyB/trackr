@@ -56,6 +56,7 @@
                     this.isCurrentlyLogging = false
                     this.totalSeconds = 0
                     this.stopwatch = '00:00:00'
+                    this.$emit('time-log-updated', data.timelog)
                 })
             },
             incrementTimeElapsed() {

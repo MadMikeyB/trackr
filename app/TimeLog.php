@@ -19,6 +19,8 @@ class TimeLog extends Model
         'saved' => TimeLogSaved::class
     ];
 
+    public $appends = ['number_of_seconds_for_humans'];
+
     /**
      * A time log belongs to a project
      * 
@@ -37,5 +39,10 @@ class TimeLog extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function getNumberOfSecondsForHumansAttribute()
+    {
+        return timeDiffForHumans($this->number_of_seconds);
     }
 }

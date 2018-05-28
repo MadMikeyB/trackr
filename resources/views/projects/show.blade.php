@@ -59,22 +59,7 @@
 
         <div class="row">
             <div class="col-8">
-                <h1><i class="fas fa-user-clock"></i> Time Logs <small><a onclick="openTimeLogsWindow()"><i class="fas fa-external-link-alt"></i></small></a></h1>
-                <p>
-                    <stopwatch :project="{{$project}}"></stopwatch>
-                </p>
-                @unless ($project->timelogs->isEmpty())
-                <ul class="list-group">
-                    @foreach ($project->timelogs->sortByDesc('created_at') as $timelog)
-                        <li class="list-group__item">
-                            <i class="fas fa-clock"></i>
-                            {{timeDiffForHumans($timelog->number_of_seconds)}} on {{ $timelog->created_at->format('jS F Y \a\t H:i:s') }}
-                        </li>
-                    @endforeach
-                </ul>
-                @else
-                    <p>No time logs have been created!</p>
-                @endunless
+                <time-log-list :project="{{$project}}"></time-log-list>
             </div>
             <!-- Milestones -->
             <div class="col-4">
