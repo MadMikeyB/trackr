@@ -49,6 +49,8 @@
                 @endif
             </div>
 
+            <p>Don't worry, all projects are private to you and you alone. No one else can see the details of your project, nor can they access it via the URL. 👍</p>
+
             <div class="form__group form__submit">
                 <button type="submit" class="button button--solid-primary">
                     {{ __('Save Project') }}

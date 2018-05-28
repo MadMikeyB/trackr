@@ -47,6 +47,16 @@
 <div class="section">
     <div class="section__container">
         
+        @if (auth()->user()->settings->hourly_rate == 0)
+        <div class="alert alert--solid-secondary">
+            <p>
+                <i class="fas fa-info-circle"></i>
+                You should set an hourly rate in your <a href="{{route('user.settings.index')}}">settings page</a> to take full advantage of <span class="u-logo-text u-logo-text-smaller">my<span>track</span>r</span>'s features
+            </p>
+        </div>
+        @endif
+
+
         <div class="row">
             <div class="col-8">
                 <h1><i class="fas fa-user-clock"></i> Time Logs</h1>
@@ -99,7 +109,7 @@
                     <p>No milestones have been created!</p>
                 @endunless
                 <p>
-                    <a href="{{route('milestones.create', $project)}}" class="button button--small button--secondary">
+                    <a href="{{route('milestones.create', $project)}}" class="button button--block button--small button--solid-secondary">
                         Create Milestone
                     </a>
                 </p>

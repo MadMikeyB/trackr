@@ -53,6 +53,12 @@
                     </li>
                 @endforeach
             @else
+                <div class="alert alert--solid-secondary">
+                    <p>
+                        <i class="fas fa-info-circle"></i>
+                        Get started by clicking the <a href="{{route('projects.create')}}">Create Project</a> button.
+                    </p>
+                </div>
                 <li>You don't seem to have any projects yet!</li>
             @endunless
         </ul>

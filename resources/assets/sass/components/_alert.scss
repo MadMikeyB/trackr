@@ -1,0 +1,54 @@
+.alert {
+    box-shadow: 0 2px 4px rgba($offblack, 0.2);
+    padding: 1rem;
+
+    & + & {
+        margin-top: 1rem;
+    }
+
+    i {
+        display: inline-block;
+        margin-right: 1rem;
+        vertical-align: middle;
+    }
+
+    p {
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    &--primary {
+        border: 2px solid $primary;
+        color: $primary;
+    }
+
+    &--secondary {
+        border: 2px solid $secondary;
+        color: $secondary;
+    }
+
+    &--solid {
+        &-primary {
+            background-color: $primary;
+            border: 2px solid $primary;
+            color: $white;
+
+            a {
+                color: $white;
+                font-weight: 400;
+            }
+        }
+
+        &-secondary {
+            background-color: $secondary;
+            border: 2px solid $secondary;
+            color: $white;
+
+            a {
+                color: $white;
+                font-weight: 400;
+            }
+        }
+    }
+}
