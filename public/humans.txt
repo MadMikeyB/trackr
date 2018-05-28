@@ -38,7 +38,7 @@ Github - Code collaboration
 github.com
 
 JS libraries include:
-VueJS
+VueJS, moment.js
 
 _______________________________________________________________________________
 
