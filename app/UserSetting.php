@@ -30,7 +30,7 @@ class UserSetting extends Model
      * Get the hourly rate attribute
      * 
      * @param string $hourlyRate
-     * @return float
+     * @return string
      */
     public function getHourlyRateAttribute($hourlyRate)
     {
