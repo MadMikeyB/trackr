@@ -27,7 +27,9 @@ Breadcrumbs::for('home', function($trail) {
 });
 Breadcrumbs::for('projects.timelogs.show', function($trail, $project) {
     $trail->parent('static.landing');
-    $trail->push('Time Logs for '. $project->title);
+    if ($project instanceof \App\Project) {
+        $trail->push('Time Logs for '. $project->title);
+    }
 });
 Breadcrumbs::for('user.settings.index', function($trail) {
     $trail->parent('static.landing');
@@ -39,7 +41,9 @@ Breadcrumbs::for('milestones.create', function($trail) {
 });
 Breadcrumbs::for('milestones.edit', function($trail, $project, $milestone) {
     $trail->parent('static.landing');
-    $trail->push('Edit Project Milestone:'. $milestone->title);
+    if ($milestone instanceof \App\ProjectMilestone) {
+        $trail->push('Edit Project Milestone:'. $milestone->title);
+    }
 });
 Breadcrumbs::for('projects.index', function($trail) {
     $trail->parent('static.landing');
@@ -51,11 +55,15 @@ Breadcrumbs::for('projects.create', function($trail) {
 });
 Breadcrumbs::for('projects.show', function($trail, $project) {
     $trail->parent('static.landing');
-    $trail->push($project->title);
+    if ($project instanceof \App\Project) {
+        $trail->push($project->title);
+    }
 });
 Breadcrumbs::for('projects.edit', function($trail, $project) {
     $trail->parent('static.landing');
-    $trail->push('Edit Project: '. $project->title);
+    if ($project instanceof \App\Project) {
+        $trail->push('Edit Project: '. $project->title);
+    }
 });
 Breadcrumbs::for('register', function($trail) {
     $trail->parent('static.landing');
