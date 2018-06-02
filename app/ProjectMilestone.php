@@ -17,7 +17,7 @@ class ProjectMilestone extends Model
 
     /**
      * A milestone belongs to a project
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function project()
@@ -27,7 +27,7 @@ class ProjectMilestone extends Model
 
     /**
      * A milestone belongs to a user
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()

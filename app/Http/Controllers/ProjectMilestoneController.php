@@ -15,8 +15,8 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Create the project milestone
-     * 
-     * @return ????
+     *
+     * @return \Illuminate\View\View
      */
     public function create(Project $project)
     {
@@ -29,9 +29,9 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Store the project milestone
-     * 
-     * @param Request $request
-     * @return Illuminate\Http\RedirectResponse
+     *
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request, Project $project)
     {
@@ -42,7 +42,7 @@ class ProjectMilestoneController extends Controller
         $project->milestones()->create([
             'title' => $request->title,
             'user_id' => $request->user()->id ?? auth()->id(),
-            'completed_at' => ((bool)$request->completed == true) ? now() : null
+            'completed_at' => ((bool)$request->completed === true) ? now() : null
         ]);
 
         return redirect()->route('projects.show', $project);
@@ -50,10 +50,10 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Edit a project milestone
-     * 
-     * @param Illuminate\Http\Request $request
-     * @param App\Project $project
-     * @return Illuminate\Http\Response
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Project $project
+     * @return \Illuminate\Http\Response
      */
     public function edit(Request $request, Project $project, ProjectMilestone $milestone)
     {
@@ -66,11 +66,11 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Edit a project milestone
-     * 
-     * @param Illuminate\Http\Request $request
-     * @param App\Project $project
-     * @param App\ProjectMilestone $milestone
-     * @return Illuminate\Http\RedirectResponse
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Project $project
+     * @param \App\ProjectMilestone $milestone
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Project $project, ProjectMilestone $milestone)
     {
@@ -92,11 +92,11 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Complete project milestone
-     * 
-     * @param Illuminate\Http\Request $request
-     * @param App\Project $project
-     * @param App\ProjectMilestone $milestone
-     * @return Illuminate\Http\RedirectResponse
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Project $project
+     * @param \App\ProjectMilestone $milestone
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function complete(Request $request, Project $project, ProjectMilestone $milestone)
     {
@@ -113,10 +113,10 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Destroy a project milestone
-     * 
-     * @param App\Project $project
-     * @param App\ProjectMilestone $milestone
-     * @return Illuminate\Http\RedirectResponse
+     *
+     * @param \App\Project $project
+     * @param \App\ProjectMilestone $milestone
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Project $project, ProjectMilestone $milestone)
     {
@@ -126,6 +126,6 @@ class ProjectMilestoneController extends Controller
 
         $milestone->delete();
 
-        return redirect()->route('projects.show', $project); 
+        return redirect()->route('projects.show', $project);
     }
 }

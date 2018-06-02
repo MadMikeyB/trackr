@@ -17,9 +17,9 @@ class TimelogController extends Controller
 
     /**
      * View the timelogs for a project (used for pop up window)
-     * 
-     * @param App\Project $project
-     * @return Illuminate\Http\Response
+     *
+     * @param \App\Project $project
+     * @return \Illuminate\View\View
      */
     public function show(Project $project)
     {

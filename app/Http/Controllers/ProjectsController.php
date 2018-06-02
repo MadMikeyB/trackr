@@ -17,8 +17,8 @@ class ProjectsController extends Controller
 
     /**
      * Display a list of the currently authenticated users projects
-     * 
-     * @return Illuminate\Database\Eloquent\Collection
+     *
+     * @return \Illuminate\View\View
      */
     public function index()
     {
@@ -29,9 +29,9 @@ class ProjectsController extends Controller
 
     /**
      * Show a single project
-     * 
-     * @param App\Project $project
-     * @return App\Project
+     *
+     * @param \App\Project $project
+     * @return \Illuminate\View\View
      */
     public function show(Project $project)
     {
@@ -44,20 +44,19 @@ class ProjectsController extends Controller
 
     /**
      * Display the create project form
-     * 
-     * @return Illuminate\Http\Response
+     *
+     * @return \Illuminate\View\View
      */
     public function create()
     {
         return view('projects.create');
-
     }
 
     /**
      * Store a new project in the database
-     * 
+     *
      * @param Request $request
-     * @return Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -67,7 +66,6 @@ class ProjectsController extends Controller
             'total_seconds' => 'required|integer|min:0'
         ]);
 
-        // @todo validation
         $project = auth()->user()->projects()->create($request->all());
 
         return redirect()->route('projects.show', $project);
@@ -75,9 +73,9 @@ class ProjectsController extends Controller
 
     /**
      * Edit a Project
-     * 
-     * @param App\Project $project
-     * @return ????
+     *
+     * @param \App\Project $project
+     * @return \Illuminate\View\View
      */
     public function edit(Project $project)
     {
@@ -90,10 +88,10 @@ class ProjectsController extends Controller
 
     /**
      * Update a project
-     * 
-     * @param Illuminate\Http\Request $request
-     * @param App\Project $project
-     * @return Illuminate\Http\RedirectResponse
+     *
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Project $project
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Project $project)
     {
@@ -114,9 +112,9 @@ class ProjectsController extends Controller
 
     /**
      * Delete a project
-     * 
-     * @param App\Project $project
-     * @return Illuminate\Http\RedirectResponse
+     *
+     * @param \App\Project $project
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Project $project)
     {

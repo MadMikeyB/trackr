@@ -2,8 +2,8 @@
 
 namespace App\Primitives;
 
-class Money {
-
+class Money
+{
     private $pence;
 
     private function __construct($pence)
@@ -28,12 +28,11 @@ class Money {
 
     public function inPounds()
     {
-        return (string) ( $this->pence / 100 );
+        return (string) ($this->pence / 100);
     }
 
     public function inPoundsAndPence()
     {
-        return number_format( $this->pence / 100, 2 );
+        return number_format($this->pence / 100, 2);
     }
-
 }

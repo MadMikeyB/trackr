@@ -23,8 +23,8 @@ class TimeLog extends Model
 
     /**
      * A time log belongs to a project
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function project()
     {
@@ -33,14 +33,19 @@ class TimeLog extends Model
 
     /**
      * A time log belongs to a user
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * Get the number of seconds for humans attribute
+     *
+     * @return string
+     */
     public function getNumberOfSecondsForHumansAttribute()
     {
         return timeDiffForHumans($this->number_of_seconds);
