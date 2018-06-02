@@ -10,7 +10,7 @@ class UserSetting extends Model
 {
     use SoftDeletes;
     
-    /* @var $fillable The fields which are mass assignable in the database */
+    /* @var array $fillable The fields which are mass assignable in the database */
     protected $fillable = ['user_id', 'hourly_rate', 'currency'];
 
     /**

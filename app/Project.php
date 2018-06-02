@@ -11,10 +11,10 @@ class Project extends Model
 {
     use SoftDeletes, Sluggable;
 
-    /* @var $fillable The fields which are mass assignable */
+    /* @var array $fillable The fields which are mass assignable */
     protected $fillable = ['title', 'description', 'user_id', 'total_seconds'];
 
-    /* @var $with The relationships which we'll always load */
+    /* @var array $with The relationships which we'll always load */
     public $with = ['timelogs'];
 
     /**

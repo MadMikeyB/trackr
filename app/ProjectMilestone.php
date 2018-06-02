@@ -9,10 +9,10 @@ class ProjectMilestone extends Model
 {
     use SoftDeletes;
     
-    /* @var $fillable The fields which are mass assignable */
+    /* @var array $fillable The fields which are mass assignable */
     protected $fillable = ['title', 'user_id', 'project_id', 'completed_at'];
 
-    /* @var $dates The fields which are mutated to carbon instances */
+    /* @var array $dates The fields which are mutated to carbon instances */
     public $dates = ['completed_at'];
 
     /**
