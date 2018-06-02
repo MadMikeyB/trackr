@@ -24,7 +24,7 @@
         <header class="header--slim">
             <span class="u-logo-text">my<span>track</span>r</span>
         </header>
-
+        {{ Breadcrumbs::render() }}
         @yield('content')
     </div>
     @stack('scripts-after')

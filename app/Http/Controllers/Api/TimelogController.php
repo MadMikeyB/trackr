@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 
 class TimelogController extends Controller
 {
-
     public function __construct()
     {
         return $this->middleware('auth');
@@ -16,7 +15,7 @@ class TimelogController extends Controller
     
     /**
      * Store a time log for a project
-     * 
+     *
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
      */

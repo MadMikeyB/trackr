@@ -17,7 +17,7 @@ class ProjectsController extends Controller
 
     /**
      * Display a list of the currently authenticated users projects
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Collection
      */
     public function index()
@@ -29,7 +29,7 @@ class ProjectsController extends Controller
 
     /**
      * Show a single project
-     * 
+     *
      * @param App\Project $project
      * @return App\Project
      */
@@ -44,18 +44,17 @@ class ProjectsController extends Controller
 
     /**
      * Display the create project form
-     * 
+     *
      * @return Illuminate\Http\Response
      */
     public function create()
     {
         return view('projects.create');
-
     }
 
     /**
      * Store a new project in the database
-     * 
+     *
      * @param Request $request
      * @return Illuminate\Http\Response
      */
@@ -75,7 +74,7 @@ class ProjectsController extends Controller
 
     /**
      * Edit a Project
-     * 
+     *
      * @param App\Project $project
      * @return ????
      */
@@ -90,7 +89,7 @@ class ProjectsController extends Controller
 
     /**
      * Update a project
-     * 
+     *
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
      * @return Illuminate\Http\RedirectResponse
@@ -114,7 +113,7 @@ class ProjectsController extends Controller
 
     /**
      * Delete a project
-     * 
+     *
      * @param App\Project $project
      * @return Illuminate\Http\RedirectResponse
      */

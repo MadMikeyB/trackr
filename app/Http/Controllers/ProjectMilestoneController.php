@@ -15,7 +15,7 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Create the project milestone
-     * 
+     *
      * @return ????
      */
     public function create(Project $project)
@@ -29,7 +29,7 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Store the project milestone
-     * 
+     *
      * @param Request $request
      * @return Illuminate\Http\RedirectResponse
      */
@@ -50,7 +50,7 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Edit a project milestone
-     * 
+     *
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
      * @return Illuminate\Http\Response
@@ -66,7 +66,7 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Edit a project milestone
-     * 
+     *
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
      * @param App\ProjectMilestone $milestone
@@ -92,7 +92,7 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Complete project milestone
-     * 
+     *
      * @param Illuminate\Http\Request $request
      * @param App\Project $project
      * @param App\ProjectMilestone $milestone
@@ -113,7 +113,7 @@ class ProjectMilestoneController extends Controller
 
     /**
      * Destroy a project milestone
-     * 
+     *
      * @param App\Project $project
      * @param App\ProjectMilestone $milestone
      * @return Illuminate\Http\RedirectResponse
@@ -126,6 +126,6 @@ class ProjectMilestoneController extends Controller
 
         $milestone->delete();
 
-        return redirect()->route('projects.show', $project); 
+        return redirect()->route('projects.show', $project);
     }
 }

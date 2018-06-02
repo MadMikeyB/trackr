@@ -14,7 +14,7 @@ class UserSettingsController extends Controller
 
     /**
      * Display the settings page
-     * 
+     *
      * @return Illuminate\Http\Response
      */
     public function index()
@@ -24,7 +24,7 @@ class UserSettingsController extends Controller
 
     /**
      * Store users settings
-     * 
+     *
      * @param Request $request
      * @return Illuminate\Http\RedirectResponse
      */

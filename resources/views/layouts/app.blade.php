@@ -21,8 +21,10 @@
 </head>
 <body>
     @include('layouts.header')
+
     {{-- HACKY --}}
     <div class="spacer" style="padding-bottom: 85px"></div>
+    {{ Breadcrumbs::render() }}
     <div id="app">
         @yield('content')
     </div>

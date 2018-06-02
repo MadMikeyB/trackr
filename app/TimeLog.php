@@ -23,7 +23,7 @@ class TimeLog extends Model
 
     /**
      * A time log belongs to a project
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function project()
@@ -33,7 +33,7 @@ class TimeLog extends Model
 
     /**
      * A time log belongs to a user
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
