@@ -94,7 +94,7 @@ class Project extends Model
 
     /**
      * Convert seconds back to hours for display
-     * 
+     *
      * @return float
      */
     public function getTotalSecondsAttribute($totalSeconds)
@@ -108,7 +108,7 @@ class Project extends Model
 
     /**
      * A project exposes how much time has been quoted
-     * 
+     *
      * @return string
      */
     public function getTimeEstimatedAttribute()
@@ -118,7 +118,7 @@ class Project extends Model
 
     /**
      * A project exposes how much time has been logged
-     * 
+     *
      * @return string
      */
     public function getTimeLoggedAttribute()

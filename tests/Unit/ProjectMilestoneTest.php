@@ -24,10 +24,10 @@ class ProjectMilestoneTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // Which has milestones
         $this->milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
-        ]);    
+        ]);
     }
 
     public function test_it_can_tell_us_about_its_project()

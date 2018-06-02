@@ -24,8 +24,8 @@ class TimeLogTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // That has time logged
         $this->timelog = factory(TimeLog::class)->create([
-            'number_of_seconds' => 60, 
-            'user_id' => $user->id, 
+            'number_of_seconds' => 60,
+            'user_id' => $user->id,
             'project_id' => $project->id
         ]);
     }

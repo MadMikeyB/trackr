@@ -37,7 +37,7 @@ class EditProjectsTest extends TestCase
         // When they request the edit screen for a project which is not their own
         $response = $this->get(route('projects.edit', $project));
         // They should be redirect
-        $response->assertStatus(302)->assertRedirect(route('home'));   
+        $response->assertStatus(302)->assertRedirect(route('home'));
     }
 
     public function test_an_unauthenticated_user_cannot_see_the_edit_screen_for_any_projects()
@@ -47,7 +47,7 @@ class EditProjectsTest extends TestCase
         // When an unauthenticated user requests the edit screen
         $response = $this->get(route('projects.edit', $project));
         // They should be redirected to login
-        $response->assertStatus(302)->assertRedirect(route('login'));   
+        $response->assertStatus(302)->assertRedirect(route('login'));
     }
 
     public function test_an_authenticated_user_can_update_their_own_projects()
@@ -79,7 +79,7 @@ class EditProjectsTest extends TestCase
         $updatedProject = factory(Project::class)->make(['user_id' => '9001']);
         $response = $this->patch(route('projects.update', $project), $updatedProject->toArray());
         // They should be redirected to the home page
-        $response->assertStatus(302)->assertRedirect(route('home'));   
+        $response->assertStatus(302)->assertRedirect(route('home'));
     }
 
     public function test_an_unauthenticated_user_cannot_update_any_project()
@@ -90,7 +90,6 @@ class EditProjectsTest extends TestCase
         $updatedProject = factory(Project::class)->make(['user_id' => '1']);
         $response = $this->patch(route('projects.update', $project), $updatedProject->toArray());
         // They should be redirected to login
-        $response->assertStatus(302)->assertRedirect(route('login'));   
+        $response->assertStatus(302)->assertRedirect(route('login'));
     }
-
 }

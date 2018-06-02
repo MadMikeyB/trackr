@@ -23,8 +23,8 @@ class EditProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // Which has a milestone
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // Who attempts to view the edit screen
@@ -44,8 +44,8 @@ class EditProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $anotherUser->id]);
         // Which has a milestone
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // Who attempts to view the edit screen
@@ -62,8 +62,8 @@ class EditProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // Which has a milestone
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // Who attempts to view the edit screen
@@ -72,7 +72,7 @@ class EditProjectMilestonesTest extends TestCase
         $response->assertStatus(302)->assertRedirect(route('login'));
     }
 
-    public function test_an_authenticated_user_can_update_the_milestones_for_thier_project() 
+    public function test_an_authenticated_user_can_update_the_milestones_for_thier_project()
     {
         // Given I have a user
         $user = factory(User::class)->create();
@@ -82,16 +82,16 @@ class EditProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // Which has a milestone
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // We should see this in the database
         $this->assertDatabaseHas('project_milestones', $milestone->toArray());
         // Which needs updating
         $updatedMilestone = factory(ProjectMilestone::class)->make([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 25%'
         ]);
         // When we submit the edit form
@@ -104,7 +104,7 @@ class EditProjectMilestonesTest extends TestCase
 
     public function test_an_authenticated_user_cannot_update_the_milestones_for_other_peoples_project()
     {
-         // Given I have a user
+        // Given I have a user
         $user = factory(User::class)->create();
         // Who is signed in
         $this->signIn($user);
@@ -113,14 +113,14 @@ class EditProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $anotherUser->id]);
         // Which has a milestone
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // Which needs updating
         $updatedMilestone = factory(ProjectMilestone::class)->make([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 25%'
         ]);
         // When we submit the edit form
@@ -136,14 +136,14 @@ class EditProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // Which has a milestone
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // Which needs updating
         $updatedMilestone = factory(ProjectMilestone::class)->make([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 25%'
         ]);
         // When we submit the edit form
@@ -151,5 +151,4 @@ class EditProjectMilestonesTest extends TestCase
         // They should be denied
         $response->assertStatus(302)->assertRedirect(route('login'));
     }
-
 }

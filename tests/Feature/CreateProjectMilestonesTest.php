@@ -63,8 +63,8 @@ class CreateProjectMilestonesTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // Who wants to add a milestone to their project
         $milestone = factory(ProjectMilestone::class)->make([
-            'project_id' => $project->id, 
-            'user_id' => $user->id, 
+            'project_id' => $project->id,
+            'user_id' => $user->id,
             'title' => 'Hit 50%'
         ]);
         // When they add a milestone to their project
@@ -79,17 +79,15 @@ class CreateProjectMilestonesTest extends TestCase
     {
         // Given we have a project
         $user = factory(User::class)->create();
-        $project = factory(Project::class)->create(['user_id' => $user->id]);           
-        // And a potential milestone 
+        $project = factory(Project::class)->create(['user_id' => $user->id]);
+        // And a potential milestone
         $milestone = factory(ProjectMilestone::class)->make([
-            'project_id' => $project->id, 
-            'user_id' => 937392, 
+            'project_id' => $project->id,
+            'user_id' => 937392,
             'title' => 'BUY ROLEX WATCHES'
         ]);
         $response = $this->post(route('milestones.store', $project), $milestone->toArray());
         // The user will not be allowed to continue
         $response->assertStatus(302)->assertRedirect(route('login'));
     }
-
 }
-

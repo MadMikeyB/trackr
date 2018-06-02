@@ -60,7 +60,7 @@ class ViewProjectsTest extends TestCase
     public function test_an_unauthenticated_user_cannot_view_any_projects()
     {
         // Given we have a project
-        $project = factory(Project::class)->create(['user_id' => '1']); 
+        $project = factory(Project::class)->create(['user_id' => '1']);
         // When we request the project
         $response = $this->get(route('projects.show', $project));
         // We should be redirected

@@ -37,8 +37,8 @@ class UserTest extends TestCase
     {
         // Log time against the project
         $timelogs = factory(TimeLog::class, 3)->create([
-            'project_id' => $this->project->id, 
-            'user_id' => $this->user->id, 
+            'project_id' => $this->project->id,
+            'user_id' => $this->user->id,
             'number_of_seconds' => 3600
         ]);
         // The user should be able to tell us what time it has logged
@@ -51,8 +51,8 @@ class UserTest extends TestCase
     {
         // create milestones against the project
         $milestone = factory(ProjectMilestone::class)->create([
-            'project_id' => $this->project->id, 
-            'user_id' => $this->user->id, 
+            'project_id' => $this->project->id,
+            'user_id' => $this->user->id,
             'title' => 'Hit 50%'
         ]);
         // The user should be able to tell us what milestones it has created

@@ -15,7 +15,7 @@ class UserSetting extends Model
 
     /**
      * Set the hourly rate attribute
-     * 
+     *
      * @param string $hourlyRate
      */
     public function setHourlyRateAttribute($hourlyRate)
@@ -28,7 +28,7 @@ class UserSetting extends Model
 
     /**
      * Get the hourly rate attribute
-     * 
+     *
      * @param string $hourlyRate
      * @return string
      */

@@ -44,13 +44,13 @@ class ProjectTest extends TestCase
     {
         // That has time logged
         $timelog = factory(TimeLog::class, 2)->create([
-            'number_of_seconds' => 300, 
-            'user_id' => $this->user->id, 
+            'number_of_seconds' => 300,
+            'user_id' => $this->user->id,
             'project_id' => $this->project->id
         ]);
         // The project should be able to tell us how much time has been logged
         $timelogs = timeDiffForHumans($this->project->timelogs->sum('number_of_seconds'));
-        // 
+        //
         $this->assertSame($this->project->time_logged, $timelogs);
     }
 
@@ -58,8 +58,8 @@ class ProjectTest extends TestCase
     {
         // Given we have a project that has time logged
         $timelog = factory(TimeLog::class, 2)->create([
-            'number_of_seconds' => 300, 
-            'user_id' => $this->user->id, 
+            'number_of_seconds' => 300,
+            'user_id' => $this->user->id,
             'project_id' => $this->project->id
         ]);
         // The project should be able to tell us how much time has been logged
@@ -70,8 +70,8 @@ class ProjectTest extends TestCase
     {
         // Given we have a project that has 1 hour logged
         $timelog = factory(TimeLog::class)->create([
-            'number_of_seconds' => 3600, 
-            'user_id' => $this->user->id, 
+            'number_of_seconds' => 3600,
+            'user_id' => $this->user->id,
             'project_id' => $this->project->id
         ]);
         // The project should be able to tell us what percentage of the overall time has been taken
@@ -86,8 +86,8 @@ class ProjectTest extends TestCase
     {
         // Given we have a project that has 1 hour logged
         $timelog = factory(TimeLog::class)->create([
-            'number_of_seconds' => 3600, 
-            'user_id' => $this->user->id, 
+            'number_of_seconds' => 3600,
+            'user_id' => $this->user->id,
             'project_id' => $this->project->id
         ]);
         // The project should be able to tell us what percentage of the overall time is remaining (90%)
@@ -111,12 +111,12 @@ class ProjectTest extends TestCase
     {
         // Given we have milestones
         $milestones = factory(ProjectMilestone::class, 2)->create([
-            'project_id' => $this->project->id, 
+            'project_id' => $this->project->id,
             'user_id' => $this->user->id
         ]);
         // and completed milestones
         $completedMilestones = factory(ProjectMilestone::class, 2)->create([
-            'project_id' => $this->project->id, 
+            'project_id' => $this->project->id,
             'user_id' => $this->user->id,
             'completed_at' => now()
         ]);
