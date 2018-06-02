@@ -31,7 +31,7 @@ class ProjectsController extends Controller
      * Show a single project
      *
      * @param \App\Project $project
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function show(Project $project)
     {
@@ -75,7 +75,7 @@ class ProjectsController extends Controller
      * Edit a Project
      *
      * @param \App\Project $project
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function edit(Project $project)
     {

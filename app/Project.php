@@ -53,7 +53,7 @@ class Project extends Model
     /**
      * A project can have many timelogs
      *
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function timelogs()
     {
@@ -63,7 +63,7 @@ class Project extends Model
     /**
      * A project can have many milestones
      *
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function milestones()
     {
@@ -73,7 +73,7 @@ class Project extends Model
     /**
      * A project belongs to a user
      *
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function user()
     {
@@ -94,6 +94,8 @@ class Project extends Model
 
     /**
      * Convert seconds back to hours for display
+     * 
+     * @return float
      */
     public function getTotalSecondsAttribute($totalSeconds)
     {
@@ -106,6 +108,8 @@ class Project extends Model
 
     /**
      * A project exposes how much time has been quoted
+     * 
+     * @return string
      */
     public function getTimeEstimatedAttribute()
     {
@@ -114,6 +118,8 @@ class Project extends Model
 
     /**
      * A project exposes how much time has been logged
+     * 
+     * @return string
      */
     public function getTimeLoggedAttribute()
     {
