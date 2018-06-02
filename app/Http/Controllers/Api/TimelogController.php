@@ -35,4 +35,5 @@ class TimelogController extends Controller
             return response(['success' => true, 'project' => $project, 'timelog' => $timelog], 201);
         }
     }
+
 }
