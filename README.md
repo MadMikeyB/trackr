@@ -10,10 +10,6 @@ mytrackr allows you to efficiently track your time, set up projects, hourly rate
 
 The application was built over the course of a weekend for [Larahack](https://larahack.com).
 
-## Vote on Larahack!!
-
-Check it out on [Larahack](https://larahack.com/project/12) and vote for mytrackr to win! :)
-
 # Features / User Story
 
 - As a freelancer, I need to be able to set my hourly rate in my dashboard.
