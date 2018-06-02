@@ -48,7 +48,7 @@ class ProjectMilestoneController extends Controller
             'completed_at' => ((bool)$request->completed === true) ? now() : null
         ]);
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', [$project]);
     }
 
     /**
@@ -93,7 +93,7 @@ class ProjectMilestoneController extends Controller
             'completed_at' => ((bool)$request->completed == true) ? now() : null
         ]);
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', [$project]);
     }
 
     /**
@@ -114,7 +114,7 @@ class ProjectMilestoneController extends Controller
             'completed_at' => now()
         ]);
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', [$project]);
     }
 
     /**
@@ -132,6 +132,6 @@ class ProjectMilestoneController extends Controller
 
         $milestone->delete();
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', [$project]);
     }
 }

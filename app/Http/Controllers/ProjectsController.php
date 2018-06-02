@@ -77,7 +77,7 @@ class ProjectsController extends Controller
 
         $project = auth()->user()->projects()->create($request->all());
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', [$project]);
     }
 
     /**
