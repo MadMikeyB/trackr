@@ -51,7 +51,7 @@ class ProjectsController extends Controller
     /**
      * Display the create project form
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function create()
     {

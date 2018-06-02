@@ -23,17 +23,6 @@ class ProjectPolicy
     }
 
     /**
-     * Determine whether the user can create projects.
-     *
-     * @param  \App\User  $user
-     * @return mixed
-     */
-    public function create(User $user)
-    {
-        return auth()->check();
-    }
-
-    /**
      * Determine whether the user can update the project.
      *
      * @param  \App\User  $user

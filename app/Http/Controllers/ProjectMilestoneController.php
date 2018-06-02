@@ -90,7 +90,7 @@ class ProjectMilestoneController extends Controller
         
         $milestone->update([
             'title' => $request->title,
-            'completed_at' => ((bool)$request->completed == true) ? now() : null
+            'completed_at' => ((bool)$request->completed === true) ? now() : null
         ]);
 
         return redirect()->route('projects.show', [$project]);

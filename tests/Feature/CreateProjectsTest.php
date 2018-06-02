@@ -14,6 +14,7 @@ class CreateProjectsTest extends TestCase
 
     public function test_an_authenticated_user_can_see_the_create_project_screen()
     {
+        $this->withoutExceptionHandling();
         // Given we have a user
         $user = factory(User::class)->create();
         // Who is logged in
