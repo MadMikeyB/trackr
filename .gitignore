@@ -13,3 +13,4 @@ yarn-error.log
 .env
 /public/css/app.css
 /public/js/app.js
+.php_cs_cache
