@@ -18,6 +18,10 @@ Route::view('/privacy', 'static.privacy')->name('static.privacy');
 Route::view('/pricing', 'static.pricing')->name('static.pricing');
 Route::view('/features', 'static.features')->name('static.features');
 
+// Sitemap
+Route::get('sitemap_index.xml', 'SitemapController@index')->name('sitemap.index');
+Route::get('sitemap_pages.xml', 'SitemapController@show')->name('sitemap.pages');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
