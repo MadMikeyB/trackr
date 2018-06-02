@@ -18,7 +18,7 @@ class UserSetting extends Model
         $money = Money::fromPounds($hourlyRate);
         if (env('APP_ENV') !== 'testing') {
             $this->attributes['hourly_rate'] = $money->inPence();
-        }   
+        }
     }
 
     public function getHourlyRateAttribute($hourlyRate)
