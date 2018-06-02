@@ -33,13 +33,13 @@ Breadcrumbs::for('user.settings.index', function($trail) {
     $trail->parent('static.landing');
     $trail->push('Your Settings');
 });
-Breadcrumbs::for('milestones.create', function($trail, $project) {
+Breadcrumbs::for('milestones.create', function($trail) {
     $trail->parent('static.landing');
-    $trail->push('Create Milestone for '. $project->title);
+    $trail->push('Create Project Milestone');
 });
 Breadcrumbs::for('milestones.edit', function($trail, $project, $milestone) {
     $trail->parent('static.landing');
-    $trail->push('Edit Milestone:'. $milestone->title);
+    $trail->push('Edit Project Milestone:'. $milestone->title);
 });
 Breadcrumbs::for('projects.index', function($trail) {
     $trail->parent('static.landing');
