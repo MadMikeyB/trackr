@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $this->seo()->setTitle('My Projects');
+        $this->seo()->setDescription('Here is where you can access all of your projects to log time, create milestones etc.');
+        
         $projects = auth()->user()->projects;
 
         return view('home', compact('projects'));

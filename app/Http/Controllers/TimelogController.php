@@ -27,6 +27,9 @@ class TimelogController extends Controller
             return redirect()->route('home');
         }
 
+        $this->seo()->setTitle('Logging Time: '.$project->title);
+        $this->seo()->setDescription($project->description);
+
         return view('projects.timelogs.show', compact('project'));
     }
 }

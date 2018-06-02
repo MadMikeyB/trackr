@@ -15,8 +15,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {!! SEO::generate() !!}
 
-    <title>mytrackr</title>
+    {{-- <title>mytrackr</title> --}}
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}?v={{env('CACHEBUST_KEY')}}" defer></script>
