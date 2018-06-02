@@ -13,6 +13,11 @@ class UserSetting extends Model
     /* @var $fillable The fields which are mass assignable in the database */
     protected $fillable = ['user_id', 'hourly_rate', 'currency'];
 
+    /**
+     * Set the hourly rate attribute
+     * 
+     * @param string $hourlyRate
+     */
     public function setHourlyRateAttribute($hourlyRate)
     {
         $money = Money::fromPounds($hourlyRate);
@@ -21,6 +26,12 @@ class UserSetting extends Model
         }
     }
 
+    /**
+     * Get the hourly rate attribute
+     * 
+     * @param string $hourlyRate
+     * @return float
+     */
     public function getHourlyRateAttribute($hourlyRate)
     {
         $money = Money::fromPence($hourlyRate);
