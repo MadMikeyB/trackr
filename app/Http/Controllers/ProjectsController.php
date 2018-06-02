@@ -22,6 +22,9 @@ class ProjectsController extends Controller
      */
     public function index()
     {
+        $this->seo()->setTitle('My Projects');
+        $this->seo()->setDescription('Here is where you can access all of your projects to log time, create milestones etc.');
+        
         $projects = auth()->user()->projects;
 
         return view('home', compact('projects'));
@@ -39,6 +42,9 @@ class ProjectsController extends Controller
             return redirect()->route('home');
         }
 
+        $this->seo()->setTitle($project->title);
+        $this->seo()->setDescription($project->description);
+
         return view('projects.show', compact('project'));
     }
 
@@ -49,6 +55,9 @@ class ProjectsController extends Controller
      */
     public function create()
     {
+        $this->seo()->setTitle('Create Project');
+        $this->seo()->setDescription('Once your project is created, you can log time against it, add milestones, and see how much time you have left.');
+
         return view('projects.create');
     }
 
@@ -82,6 +91,10 @@ class ProjectsController extends Controller
         if (!auth()->user()->can('update', $project)) {
             return redirect()->route('home');
         }
+        
+        $this->seo()->setTitle('Update Project: '. $project->title);
+        $this->seo()->setDescription($project->description);
+
 
         return view('projects.edit', compact('project'));
     }

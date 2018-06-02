@@ -24,6 +24,9 @@ class ProjectMilestoneController extends Controller
             return redirect()->route('home');
         }
 
+        $this->seo()->setTitle('Create Project Milestone');
+        $this->seo()->setDescription('Milestones are a great way to track your progress versus your estimate.');
+
         return view('projects.milestones.create', compact('project'));
     }
 
@@ -60,6 +63,9 @@ class ProjectMilestoneController extends Controller
         if (!auth()->user()->can('update', $project)) {
             return redirect()->route('home');
         }
+
+        $this->seo()->setTitle('Edit Project Milestone');
+        $this->seo()->setDescription('Milestones are a great way to track your progress versus your estimate.');
 
         return view('projects.milestones.edit', compact('project', 'milestone'));
     }

@@ -19,6 +19,9 @@ class UserSettingsController extends Controller
      */
     public function index()
     {
+        $this->seo()->setTitle('Your Settings');
+        $this->seo()->setDescription('The heart of your account, set your hourly rate and currency here.');
+
         return view('users.settings');
     }
 
