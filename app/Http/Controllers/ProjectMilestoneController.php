@@ -16,7 +16,7 @@ class ProjectMilestoneController extends Controller
     /**
      * Create the project milestone
      *
-     * @return \Illuminate\View\View
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function create(Project $project)
     {
@@ -53,7 +53,7 @@ class ProjectMilestoneController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Project $project
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
      */
     public function edit(Request $request, Project $project, ProjectMilestone $milestone)
     {

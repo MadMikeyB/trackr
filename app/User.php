@@ -60,7 +60,7 @@ class User extends Authenticatable
     /**
      * A user has many settings
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function settings()
     {
