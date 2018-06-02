@@ -14,3 +14,4 @@ yarn-error.log
 /public/css/app.css
 /public/js/app.js
 .php_cs_cache
+/public/report
