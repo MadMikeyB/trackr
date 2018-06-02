@@ -2,6 +2,11 @@
     <img src="https://i.imgur.com/glCQOM3.jpg" alt="mytrackr logo">
 </p>
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/MadMikeyB/trackr/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/MadMikeyB/trackr/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/MadMikeyB/trackr/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/MadMikeyB/trackr/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/MadMikeyB/trackr/badges/build.png?b=master)](https://scrutinizer-ci.com/g/MadMikeyB/trackr/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/MadMikeyB/trackr/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+
 # Introduction
 
 This is the repository for the application at [https://mytrackr.app](https://mytrackr.app).

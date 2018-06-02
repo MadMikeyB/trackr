@@ -1,0 +1,16 @@
+checks:
+    php: true
+
+build:  
+    environment:
+        php: '7.2.0'
+    tests:
+        before:
+            - cp .env.example .env'
+            - 'php artisan key:generate'
+        override:
+            -
+                command: phpunit --coverage-clover=my-coverage-file
+                coverage:
+                    file: my-coverage-file
+                    format: php-clover
