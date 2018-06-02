@@ -6,10 +6,10 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "mytrackr", // set false to total remove
+            'title'        => "mytrackr - Free time tracking and productivity software", // set false to total remove
             'description'  => 'mytrackr allows you to efficiently track your time, set up projects, hourly rates cost estimates, milestones and much more!', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => [],
+            'keywords'     => ['time tracking', 'online timer', 'timesheets', 'time management system', 'employee time tracking', 'productivity tracking', 'work hours', 'project management system', 'project milestones'],
             'canonical'    => null, // Set null for using Url::current(), set false to total remove
         ],
 
