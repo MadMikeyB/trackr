@@ -18,6 +18,7 @@ class TimelogController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param \App\Project $project
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse
      */
     public function store(Request $request, Project $project)
     {
