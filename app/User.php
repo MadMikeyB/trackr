@@ -39,8 +39,8 @@ class User extends Authenticatable
 
     /**
      * A user has many projects
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function projects()
     {
@@ -49,8 +49,8 @@ class User extends Authenticatable
 
     /**
      * A user has many timelogs
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function timelogs()
     {
@@ -59,8 +59,8 @@ class User extends Authenticatable
 
     /**
      * A user has many settings
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function settings()
     {
@@ -69,8 +69,8 @@ class User extends Authenticatable
 
     /**
      * A user has many milestones
-     * 
-     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function milestones()
     {
@@ -79,7 +79,7 @@ class User extends Authenticatable
 
     /**
      * Get the total time logged for this user
-     * 
+     *
      * @return int
      */
     public function getTotalTimeLoggedAttribute()
