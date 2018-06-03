@@ -35,7 +35,7 @@ class TimelogController extends Controller
             return response(['success' => true, 'project' => $project, 'timelog' => $timelog], 201);
         }
 
-        return redirect()->route('projects.show', $project);
+        return redirect()->route('projects.show', [$project]);
     }
 
 }
