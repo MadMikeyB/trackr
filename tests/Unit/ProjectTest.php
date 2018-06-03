@@ -76,7 +76,7 @@ class ProjectTest extends TestCase
         ]);
         // The project should be able to tell us what percentage of the overall time has been taken
         // Work out percentage (Hat tip @ollieread)
-        $onePercent = $this->project->total_seconds / 100;
+        $onePercent = $this->project->getOriginal('total_seconds') / 100;
         $percentage = min(100, ceil($this->project->time_logged_seconds / $onePercent));
         // The percentage should match the project's percentage
         $this->assertSame($this->project->percentage_taken, $percentage);
@@ -148,7 +148,7 @@ class ProjectTest extends TestCase
 
     public function test_it_can_tell_you_the_total_time_estimated_in_a_human_readable_way()
     {
-        $timeEstimated = timeDiffForHumans($this->project->total_seconds);
+        $timeEstimated = timeDiffForHumans($this->project->getOriginal('total_seconds'));
         $this->assertSame($timeEstimated, $this->project->time_estimated);
     }
 }

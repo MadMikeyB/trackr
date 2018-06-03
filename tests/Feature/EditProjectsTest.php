@@ -61,6 +61,8 @@ class EditProjectsTest extends TestCase
         // When they try to update their project
         $updatedProject = factory(Project::class)->make(['title' => 'My New Probject', 'slug' => $project->slug, 'user_id' => $user->id]);
         $response = $this->patch(route('projects.update', $project), $updatedProject->toArray());
+        // Convert to hours
+        $updatedProject->total_seconds = $updatedProject->total_seconds * 3600;    
         // It should be persisted in the database
         $this->assertDatabaseHas('projects', $updatedProject->toArray());
         // And they should be redirected back to it

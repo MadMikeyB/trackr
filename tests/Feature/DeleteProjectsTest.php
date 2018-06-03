@@ -22,6 +22,8 @@ class DeleteProjectsTest extends TestCase
         $project = factory(Project::class)->create(['user_id' => $user->id]);
         // When they submit a delete request
         $response = $this->delete(route('projects.destroy', $project));
+        // Convert to hours
+        $project->total_seconds = $project->total_seconds * 3600;    
         // Their project should be missing from the database
         $this->assertSoftDeleted('projects', $project->toArray());
         // and they should be redirected to the home page

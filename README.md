@@ -28,8 +28,8 @@ The application was built over the course of a weekend for [Larahack](https://la
 - As a freelancer, I need to receive alerts once I am reaching the threshold for a project. 50% time taken. 80% time taken.
 - As a freelancer, I need to be able to set milestones. Mark a project as 50% complete, 80% complete, etc.
 
-# Fully Tested
+# ✅ 100% Code Coverage ✅
 
 <p align="center">
-    <img src="https://i.imgur.com/8ynaEU8.jpg" alt="Unit Tests for the mytrackr application">
+    <img src="https://i.imgur.com/vHd98S1.jpg" alt="Test Results for the mytrackr application">
 </p>

@@ -41,8 +41,10 @@ class CreateProjectsTest extends TestCase
         // Who is logged in
         $this->signIn($user);
         // When they attempt to create a project
-        $project = factory(Project::class)->make(['user_id' => $user->id]);
+        $project = factory(Project::class)->make(['user_id' => $user->id, 'total_seconds' => 100]);
         $response = $this->post(route('projects.store'), $project->toArray());
+        // Convert to hours
+        $project->total_seconds = $project->total_seconds * 3600;    
         // Their project should be persisted in the database
         $this->assertDatabaseHas('projects', $project->toArray());
         // And they should be redirected to the Project Settings page

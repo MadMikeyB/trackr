@@ -85,11 +85,11 @@ class Project extends Model
      */
     public function setTotalSecondsAttribute($hours)
     {
-        if (env('APP_ENV') !== 'testing') {
+        // if (env('APP_ENV') !== 'testing') {
             $this->attributes['total_seconds'] = $hours * 3600;
-        } else {
-            $this->attributes['total_seconds'] = $hours;
-        }
+        // } else {
+            // $this->attributes['total_seconds'] = $hours;
+        // }
     }
 
     /**
@@ -99,11 +99,11 @@ class Project extends Model
      */
     public function getTotalSecondsAttribute($totalSeconds)
     {
-        if (env('APP_ENV') !== 'testing') {
+        // if (env('APP_ENV') !== 'testing') {
             return $totalSeconds / 3600;
-        } else {
-            return $totalSeconds;
-        }
+        // } else {
+        //     return $totalSeconds;
+        // }
     }
 
     /**
