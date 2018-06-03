@@ -13,7 +13,7 @@ class CreateTimeLogTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_an_authenticated_user_can_log_time_against_their_own_project()
+    public function test_an_authenticated_user_can_log_time_against_their_own_project_via_json()
     {
         // Given we have user
         $user = factory(User::class)->create();
@@ -37,6 +37,33 @@ class CreateTimeLogTest extends TestCase
             'success' => true,
             'project' => $project->toArray(),
         ]);
+    }
+
+    public function test_an_authenticated_user_can_log_time_against_their_own_project()
+    {
+        // Given we have user
+        $user = factory(User::class)->create();
+        // who is logged in
+        $this->signIn($user);
+        // who has a project
+        $project = factory(Project::class)->create(['user_id' => $user->id]);
+        // who wants to log time against their project
+        $timelog = factory(TimeLog::class)->make([
+            'number_of_seconds' => 60,
+            'user_id' => $user->id,
+            'project_id' => $project->id
+        ]);
+        $timelog->setAppends([]);
+        // when the time is logged
+        $response = $this->post(route('api.timelog.store', $project->fresh()), $timelog->toArray());
+        // it should be persisted in the database
+        $this->assertDatabaseHas('time_logs', $timelog->toArray());
+        // // we should get a 201 CREATED response
+        $response->assertStatus(302)->assertRedirect(route('projects.show', $project));
+        // $response->assertStatus(201)->assertJson([
+        //     'success' => true,
+        //     'project' => $project->toArray(),
+        // ]);
     }
 
     public function test_an_authenticated_user_cannot_log_time_against_other_peoples_projects()

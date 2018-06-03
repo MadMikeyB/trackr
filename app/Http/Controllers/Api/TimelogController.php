@@ -34,6 +34,8 @@ class TimelogController extends Controller
         if ($request->expectsJson()) {
             return response(['success' => true, 'project' => $project, 'timelog' => $timelog], 201);
         }
+
+        return redirect()->route('projects.show', $project);
     }
 
 }
