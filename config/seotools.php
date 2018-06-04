@@ -34,7 +34,7 @@ return [
             'url'         => null, // Set null for using Url::current(), set false to total remove
             'type'        => 'website',
             'site_name'   => 'mytrackr',
-            'images'      => [secure_asset('img/ogimage.png')],
+            'images'      => ['https://mytrackr.app/img/ogimage.png'],
         ],
     ],
     'twitter' => [
