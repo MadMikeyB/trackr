@@ -25,6 +25,16 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ secure_asset('/img/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ secure_asset('/img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ secure_asset('/img/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ secure_asset('/img/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ secure_asset('/img/safari-pinned-tab.svg') }}" color="#8d6a9f">
+    <link rel="shortcut icon" href="{{ secure_asset('/img/favicon.ico') }}">
+    <meta name="msapplication-TileColor" content="#8d6a9f">
+    <meta name="msapplication-TileImage" content="{{ secure_asset('/img/mstile-144x144.png') }}">
+    <meta name="msapplication-config" content="{{ secure_asset('/img/browserconfig.xml') }}">
+    <meta name="theme-color" content="#8D6A9F">
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
