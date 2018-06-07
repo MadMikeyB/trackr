@@ -24,6 +24,9 @@ Route::get('sitemap_pages.xml', 'SitemapController@show')->name('sitemap.pages')
 
 Auth::routes();
 
+Route::get('/teams/register', 'TeamsController@create')->name('teams.create');
+Route::post('/teams/register', 'TeamsController@store')->name('teams.store');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/projects/{project}/timelog', 'TimelogController@show')->name('projects.timelogs.show');

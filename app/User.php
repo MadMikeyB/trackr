@@ -78,6 +78,16 @@ class User extends Authenticatable
     }
 
     /**
+     * A user has many teams
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function teams()
+    {
+        return $this->hasMany(Team::class, 'owner_id');
+    }
+
+    /**
      * Get the total time logged for this user
      *
      * @return int

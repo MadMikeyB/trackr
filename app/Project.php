@@ -31,7 +31,6 @@ class Project extends Model
         ];
     }
 
-
     /**
      * Set the route key name for the Project Model
      */
