@@ -29,4 +29,22 @@ class CreateTeamsTest extends TestCase
         // And I should be redirected to the home page and logged in
         $response->assertRedirect(route('home'))->assertStatus(302);
     }
+
+    public function test_a_user_can_create_a_team_when_already_signed_in()
+    {
+        $this->withoutExceptionHandling();
+        // Given I have a user
+        $user = factory(User::class)->create();
+        // Who is signed in
+        $this->signIn($user);
+        // When I try to create a team
+        $team = factory(Team::class)->make(['owner_id' => $user->id]);
+        $data = $team->toArray();
+        $data['team_name'] = $team->name;
+        $response = $this->post(route('teams.store'), $data);
+        // It should be persisted in the database
+        $this->assertDatabaseHas('teams', $team->toArray());
+        // And I should be redirected home
+        $response->assertRedirect(route('home'))->assertStatus(302);
+    }
 }
