@@ -12,6 +12,27 @@ class CreateTeamsTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_an_unauthenticated_user_can_see_the_create_team_page()
+    {
+        // Given I am a guest
+        // And I visit the sign up as team page
+        $response = $this->get(route('teams.create'));
+        // I should see it, AND the button should say "Sign Up"
+        $response->assertStatus(200)->assertSee('Sign Up');
+    }
+
+    public function test_an_authenticated_user_can_see_the_create_team_page()
+    {
+        // Given I have a user
+        $user = factory(User::class)->create(); 
+        // Who is signed in
+        $this->signIn($user);
+        // When they visit the team creation page
+        $response = $this->get(route('teams.create'));
+        // They should see it AND the button should say Create Team
+        $response->assertStatus(200)->assertSee('Create Team');
+    }
+
     public function test_a_user_can_create_a_team_when_registering()
     {
         // Given I have a user

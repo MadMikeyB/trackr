@@ -8,6 +8,15 @@ use Illuminate\Support\Facades\Hash;
 
 class TeamsController extends Controller
 {
+    public function create()
+    {
+        if (auth()->check()) {
+            return 'Create Team';
+        } else {
+            return 'Sign Up';
+        }
+    }
+
     public function store(Request $request)
     {
         // @todo validation
